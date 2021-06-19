@@ -8,7 +8,7 @@ import { mentorsList } from "../utils/mentors-list";
 
 import { testimonialItems } from "../utils/testimonial-items";
 
-export default function Home({ props }) {
+export default function Home() {
   const { pathname } = useRouter();
 
   useEffect(() => {
@@ -175,42 +175,42 @@ export default function Home({ props }) {
 
       {/* <!-- Home section --> */}
 
-      <div class="home-features-section" id="home-section">
-        <div class="home-features-wrapper">
-          <div id="Features" class="w-layout-grid home-features-grid">
-            <div class="home-features-block">
-              <div class="home-features-icon-wrapper">
+      <div className="home-features-section" id="home-section">
+        <div className="home-features-wrapper">
+          <div id="Features" className="w-layout-grid home-features-grid">
+            <div className="home-features-block">
+              <div className="home-features-icon-wrapper">
                 <img
                   src="/images/home-section/home-section-vr-thumb.svg"
                   loading="lazy"
                   height="64"
                   alt=""
-                  class="home-features-icon"
+                  className="home-features-icon"
                 />
                 <img
                   src="/images/home-section/home-section-icon-hex-left.svg"
                   loading="lazy"
                   height=""
                   alt=""
-                  class="image"
+                  className="image"
                 />
               </div>
-              <h3 class="home-features-title-text">Auticare</h3>
-              <div class="div-line"></div>
+              <h3 className="home-features-title-text">Auticare</h3>
+              <div className="div-line"></div>
               <p>
                 XR-AI based Assistive Technology Learning platform for Autism
                 Spectrum Disorder and Special Education.
               </p>
             </div>
-            <div class="home-features-block">
-              <div class="home-features-icon-wrapper">
+            <div className="home-features-block">
+              <div className="home-features-icon-wrapper">
                 <img
                   src="/images/home-section/home-section-crypto-thumb.svg"
                   loading="lazy"
                   height="64"
                   width="64"
                   alt=""
-                  class="home-features-icon"
+                  className="home-features-icon"
                 />
                 <img
                   src="/images/home-section/home-section-icon-hex-right.svg"
@@ -219,22 +219,22 @@ export default function Home({ props }) {
                   alt=""
                 />
               </div>
-              <h3 class="home-features-title-text">Mindcare XR</h3>
-              <div class="div-line"></div>
+              <h3 className="home-features-title-text">Mindcare XR</h3>
+              <div className="div-line"></div>
               <p>
                 XR unique platform to achieve optimal wellness through online
                 therapy sessions
               </p>
             </div>
-            <div class="home-features-block">
-              <div class="home-features-icon-wrapper">
+            <div className="home-features-block">
+              <div className="home-features-icon-wrapper">
                 <img
                   src="/images/home-section/home-section-ai-thumb.svg"
                   loading="lazy"
                   height=""
                   width="64"
                   alt=""
-                  class="home-features-icon"
+                  className="home-features-icon"
                 />
                 <img
                   src="/images/home-section/home-section-icon-hex-left.svg"
@@ -243,29 +243,29 @@ export default function Home({ props }) {
                   alt=""
                 />
               </div>
-              <h3 class="home-features-title-text">Eduoskus XR</h3>
-              <div class="div-line"></div>
+              <h3 className="home-features-title-text">Eduoskus XR</h3>
+              <div className="div-line"></div>
               <p>One stop platform for all teaching and learning solutions</p>
             </div>
-            <div class="home-features-block">
-              <div class="home-features-icon-wrapper">
+            <div className="home-features-block">
+              <div className="home-features-icon-wrapper">
                 <img
                   src="/images/home-section/home-section-cpu-thumb.svg"
                   loading="lazy"
                   height="64"
                   alt=""
-                  class="home-features-icon"
+                  className="home-features-icon"
                 />
                 <img
                   src="/images/home-section/home-section-icon-hex-right.svg"
                   loading="lazy"
                   height=""
                   alt=""
-                  class="home-features-icon-placeholder"
+                  className="home-features-icon-placeholder"
                 />
               </div>
-              <h3 class="home-features-title-text">XR Event</h3>
-              <div class="div-line"></div>
+              <h3 className="home-features-title-text">XR Event</h3>
+              <div className="div-line"></div>
               <p>
                 A stunning user-friendly virtual event platform for events,
                 trade shows, exhibitions etc
@@ -275,19 +275,19 @@ export default function Home({ props }) {
         </div>
 
         {/* <!-- Partner Section --> */}
-        <div class="w-layout-grid partners-grid" id="partner-section">
-          <div class="partners-grid-vertical-spacing-block"></div>
-          <div class="partners-grid-vertical-spacing-block"></div>
-          <div class="partners-grid-vertical-spacing-block"></div>
-          <div class="partners-grid-vertical-spacing-block"></div>
+        <div className="w-layout-grid partners-grid" id="partner-section">
+          <div className="partners-grid-vertical-spacing-block"></div>
+          <div className="partners-grid-vertical-spacing-block"></div>
+          <div className="partners-grid-vertical-spacing-block"></div>
+          <div className="partners-grid-vertical-spacing-block"></div>
           {Object.keys(partnersList).map((logo) => (
-            <div class="partners-block">
+            <div className="partners-block">
               <img
                 src={partnersList[logo].img}
                 loading="lazy"
                 height=""
                 alt={partnersList[logo].name}
-                class="partners-logo-image"
+                className="partners-logo-image"
               />
             </div>
           ))}
@@ -295,18 +295,18 @@ export default function Home({ props }) {
       </div>
 
       {/* <!-- About section --> */}
-      <div class="home-about-section" id="about-section">
-        <div class="vertical-line-top"></div>
-        <div class="w-layout-grid home-about-grid">
-          <div class="home-about-grid-column-1">
-            <div class="lightbox-wrapper">
-              <a class="lightbox-gallery w-inline-block">
+      <div className="home-about-section" id="about-section">
+        <div className="vertical-line-top"></div>
+        <div className="w-layout-grid home-about-grid">
+          <div className="home-about-grid-column-1">
+            <div className="lightbox-wrapper">
+              <a className="lightbox-gallery w-inline-block">
                 <img
                   src="/images/about-section/about-section-camera-icon.svg"
                   loading="lazy"
                   height="24"
                   alt=""
-                  class="lightbox-icon"
+                  className="lightbox-icon"
                 />
                 <img
                   src="/images/about-section/about-section-cover.jpeg"
@@ -317,7 +317,7 @@ export default function Home({ props }) {
                   /images/about-section/about-section-cover.jpeg 1024w
                 "
                   alt=""
-                  class="lightbox-thumb"
+                  className="lightbox-thumb"
                 />
               </a>
             </div>
@@ -325,16 +325,16 @@ export default function Home({ props }) {
               src="/images/about-section/about-section-hex-left.svg"
               loading="lazy"
               alt=""
-              class="home-about-place-holder"
+              className="home-about-place-holder"
             />
           </div>
-          <div class="home-about-grid-column-2">
+          <div className="home-about-grid-column-2">
             <h6>About Us</h6>
             <h2>
               Embright
-              <span class="text-color">Infotech</span>
+              <span className="text-color">Infotech</span>
             </h2>
-            <div class="div-line"></div>
+            <div className="div-line"></div>
             <p>
               <strong>
                 An XR (Extended Reality) based startup recognized by Govt. of
@@ -358,33 +358,33 @@ export default function Home({ props }) {
         </div>
 
         {/* <!-- Gallery section --> */}
-        <div class="vertical-line-bottom"></div>
+        <div className="vertical-line-bottom"></div>
       </div>
-      <div class="home-classes-section">
-        <div class="home-classes-text">
-          <div class="light-section-text-wrapper">
+      <div className="home-classNamees-section">
+        <div className="home-classNamees-text">
+          <div className="light-section-text-wrapper">
             <h6>Gallery</h6>
-            <h2 class="light-section-title-text">Check out our achievements</h2>
-            <div class="div-line"></div>
+            <h2 className="light-section-title-text">Check out our achievements</h2>
+            <div className="div-line"></div>
           </div>
         </div>
-        <div class="home-classes-wrapper">
-          <div class="classes-list-wrapper w-dyn-list">
-            <div role="list" class="classes-list w-dyn-items">
+        <div className="home-classNamees-wrapper">
+          <div className="classNamees-list-wrapper w-dyn-list">
+            <div role="list" className="classNamees-list w-dyn-items">
               {/* <!-- item --> */}
               {Object.keys(galleryItems).map((idx) => (
-                <div role="listitem" class="classes-item w-dyn-item">
+                <div role="listitem" className="classNamees-item w-dyn-item">
                   <a
                     href={galleryItems[idx]}
-                    class="classes-item-link-block w-inline-block"
+                    className="classNamees-item-link-block w-inline-block"
                   >
-                    <div class="classes-item-image-wrapper">
-                      <h3 class="classes-item-title-text"></h3>
+                    <div className="classNamees-item-image-wrapper">
+                      <h3 className="classNamees-item-title-text"></h3>
                       <div
                         style={{
                           backgroundImage: `url(${galleryItems[idx]})`,
                         }}
-                        class="classes-item-image"
+                        className="classNamees-item-image"
                       ></div>
                     </div>
                   </a>
@@ -394,59 +394,59 @@ export default function Home({ props }) {
           </div>
 
           {/* <!-- counter section --> */}
-          <div class="w-layout-grid facts-grid">
-            <div class="partners-grid-vertical-spacing-block"></div>
-            <div class="partners-grid-vertical-spacing-block"></div>
-            <div class="partners-grid-vertical-spacing-block"></div>
-            <div class="partners-grid-vertical-spacing-block"></div>
-            <div class="facts-block">
-              <div class="facts-title-text">+235K</div>
-              <div class="facts-detail-text">Cup of Coffees</div>
+          <div className="w-layout-grid facts-grid">
+            <div className="partners-grid-vertical-spacing-block"></div>
+            <div className="partners-grid-vertical-spacing-block"></div>
+            <div className="partners-grid-vertical-spacing-block"></div>
+            <div className="partners-grid-vertical-spacing-block"></div>
+            <div className="facts-block">
+              <div className="facts-title-text">+235K</div>
+              <div className="facts-detail-text">Cup of Coffees</div>
             </div>
-            <div class="facts-block">
-              <div class="facts-title-text">+100</div>
-              <div class="facts-detail-text">VR Scenarios</div>
+            <div className="facts-block">
+              <div className="facts-title-text">+100</div>
+              <div className="facts-detail-text">VR Scenarios</div>
             </div>
-            <div class="facts-block">
-              <div class="facts-title-text">+30</div>
-              <div class="facts-detail-text">Employees</div>
+            <div className="facts-block">
+              <div className="facts-title-text">+30</div>
+              <div className="facts-detail-text">Employees</div>
             </div>
-            <div class="facts-block">
-              <div class="facts-title-text">+100</div>
-              <div class="facts-detail-text">Happy Clients</div>
+            <div className="facts-block">
+              <div className="facts-title-text">+100</div>
+              <div className="facts-detail-text">Happy Clients</div>
             </div>
           </div>
 
           {/* <!-- testimonial section --> */}
-          <div class="w-layout-grid testimonials-grid">
+          <div className="w-layout-grid testimonials-grid">
             {/* <!-- block --> */}
             {Object.keys(testimonialItems).map((quote) => (
-              <div class="testimonial-block">
+              <div className="testimonial-block">
                 <img
                   src={testimonialItems[quote].img}
                   loading="lazy"
                   width="200"
                   height="200"
                   alt=""
-                  class="quote-image"
+                  className="quote-image"
                 />
                 <blockquote>{testimonialItems[quote].quote}</blockquote>
                 <h6>{testimonialItems[quote].desg}</h6>
-                <h3 class="testimonial-title-text">
+                <h3 className="testimonial-title-text">
                   {testimonialItems[quote].name}
                 </h3>
-                <div class="w-layout-grid testimonials-social-buttons-grid">
+                <div className="w-layout-grid testimonials-social-buttons-grid">
                   {Object.keys(testimonialItems[quote].social).map((social) => (
                     <a
                       href={testimonialItems[quote].social[social].link}
-                      class="button-social w-inline-block"
+                      className="button-social w-inline-block"
                     >
                       <img
                         src={testimonialItems[quote].social[social].icon}
                         loading="lazy"
                         height="24"
                         alt=""
-                        class="button-icon"
+                        className="button-icon"
                       />
                     </a>
                   ))}
@@ -458,53 +458,53 @@ export default function Home({ props }) {
       </div>
 
       {/* <!-- Team Section --> */}
-      <div class="trainers-section">
-        <div class="vertical-line-top"></div>
-        <div class="dark-section-text-wrapper">
+      <div className="trainers-section">
+        <div className="vertical-line-top"></div>
+        <div className="dark-section-text-wrapper">
           <h6>Mentors</h6>
-          {/* <h2 class="dark-section-title-text">
+          {/* <h2 className="dark-section-title-text">
           The guys at work behind the sceces
         </h2> */}
-          <div class="div-line"></div>
+          <div className="div-line"></div>
         </div>
-        <div class="aux-block">
-          <div class="home-trainers-list-wrapper w-dyn-list">
-            <div role="list" class="trainers-list w-dyn-items">
+        <div className="aux-block">
+          <div className="home-trainers-list-wrapper w-dyn-list">
+            <div role="list" className="trainers-list w-dyn-items">
               {Object.keys(mentorsList).map((mentor) => (
-                <div role="listitem" class="trainers-item w-dyn-item">
-                  <a class="trainers-item-link-block w-inline-block">
-                    <div class="trainers-image-wrapper-tilt-left">
-                      <div class="trainers-image-wrapper">
+                <div role="listitem" className="trainers-item w-dyn-item">
+                  <a className="trainers-item-link-block w-inline-block">
+                    <div className="trainers-image-wrapper-tilt-left">
+                      <div className="trainers-image-wrapper">
                         <img
                           loading="lazy"
                           src={mentorsList[mentor].img}
                           alt={mentorsList[mentor].name}
-                          class="trainers-image"
+                          className="trainers-image"
                         />
                       </div>
                       <img
                         src={mentorsList[mentor].bg}
                         loading="lazy"
-                        class="trainers-image-placeholder"
+                        className="trainers-image-placeholder"
                       />
                     </div>
                     <div
-                      class="
+                      className="
                     trainers-image-wrapper-tilt-right
                     w-condition-invisible
                   "
                     >
-                      <div class="trainers-image-wrapper"></div>
+                      <div className="trainers-image-wrapper"></div>
                       <img
                         src={mentorsList[mentor].bg}
                         loading="lazy"
                         alt=""
-                        class="trainers-image-placeholder"
+                        className="trainers-image-placeholder"
                       />
                     </div>
                     <h3>{mentorsList[mentor].name}</h3>
 
-                    <div class="div-line"></div>
+                    <div className="div-line"></div>
                     <h6 className="ps-50">{mentorsList[mentor].desc}</h6>
                   </a>
                 </div>
@@ -512,7 +512,7 @@ export default function Home({ props }) {
             </div>
           </div>
         </div>
-        <div class="vertical-line-bottom"></div>
+        <div className="vertical-line-bottom"></div>
       </div>
     </>
   );

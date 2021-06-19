@@ -23,26 +23,26 @@ export default function Services() {
   return (
     <>
       {/* <!-- Nav Section --> */}
-      <div class="home-hero-section">
+      <div className="home-hero-section">
         <div
           data-collapse="medium"
           data-animation="default"
           data-duration="400"
           role="banner"
-          class="navbar w-nav"
+          className="navbar w-nav"
         >
-          <div class="nav-wrapper">
+          <div className="nav-wrapper">
             <a
               href="index.html"
               aria-current="page"
-              class="brand w-nav-brand w--current"
+              className="brand w-nav-brand w--current"
             >
-              <div class="brand-logo">
+              <div className="brand-logo">
                 <img src="/images/logo/embright-logo-white.png" />
               </div>
             </a>
             <div
-              class="menu-button w-nav-button w--open"
+              className="menu-button w-nav-button w--open"
               aria-label="menu"
               role="button"
               aria-controls="w-nav-overlay-0"
@@ -57,7 +57,7 @@ export default function Services() {
                 alt=""
               />
             </div>
-            <nav role="navigation" class="nav-menu w-nav-menu" id="toggle-nav">
+            <nav role="navigation" className="nav-menu w-nav-menu" id="toggle-nav">
               {Object.keys(navLinks).map((item) =>
                 navLinks[item].sublinks ? (
                   <div className="dropdown">
@@ -102,7 +102,7 @@ export default function Services() {
           data-autoplay="true"
           data-loop="true"
           data-wf-ignore="true"
-          class="background-video w-background-video w-background-video-atom"
+          className="background-video w-background-video w-background-video-atom"
         >
           <video
             autoplay=""
@@ -127,7 +127,7 @@ export default function Services() {
           </video>
         </div>
         <div
-          class="w-layout-grid home-hero-grid"
+          className="w-layout-grid home-hero-grid"
           style={{
             display: "-webkit-box",
             display: "-webkit-flex",
@@ -143,35 +143,35 @@ export default function Services() {
             webkitFlexDirection: "column",
           }}
         >
-          <div class="hero-grid-column-1">
-            <h1 class="hero-title-text">
-              <span class="text-color">Services</span>
+          <div className="hero-grid-column-1">
+            <h1 className="hero-title-text">
+              <span className="text-color">Services</span>
             </h1>
-            <div class="div-line"></div>
+            <div className="div-line"></div>
           </div>
         </div>
       </div>
 
       {/* <!-- Home section --> */}
-      <div class="home-features-section" id="home-section">
-        <div class="home-features-wrapper">
-          <div id="Features" class="w-layout-grid home-features-grid">
+      <div className="home-features-section" id="home-section">
+        <div className="home-features-wrapper">
+          <div id="Features" className="w-layout-grid home-features-grid">
             {Object.keys(serviceItems).map((item) => (
               <a href={serviceItems[item].link}>
-                <div class="home-features-block">
-                  <div class="home-features-icon-wrapper">
+                <div className="home-features-block">
+                  <div className="home-features-icon-wrapper">
                     <img
                       src={serviceItems[item].img}
                       loading="lazy"
                       height="150"
                       alt=""
-                      class="image"
+                      className="image"
                     />
                   </div>
-                  <h3 class="home-features-title-text">
+                  <h3 className="home-features-title-text">
                     {serviceItems[item].name}
                   </h3>
-                  <div class="div-line"></div>
+                  <div className="div-line"></div>
                   <p>{serviceItems[item].desc}</p>
                 </div>
               </a>

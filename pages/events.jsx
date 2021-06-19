@@ -22,26 +22,26 @@ export default function Events() {
   return (
     <>
       {/* <!-- Nav Section --> */}
-      <div class="home-hero-section">
+      <div className="home-hero-section">
         <div
           data-collapse="medium"
           data-animation="default"
           data-duration="400"
           role="banner"
-          class="navbar w-nav"
+          className="navbar w-nav"
         >
-          <div class="nav-wrapper">
+          <div className="nav-wrapper">
             <a
               href="index.html"
               aria-current="page"
-              class="brand w-nav-brand w--current"
+              className="brand w-nav-brand w--current"
             >
-              <div class="brand-logo">
+              <div className="brand-logo">
                 <img src="/images/logo/embright-logo-white.png" />
               </div>
             </a>
             <div
-              class="menu-button w-nav-button w--open"
+              className="menu-button w-nav-button w--open"
               aria-label="menu"
               role="button"
               aria-controls="w-nav-overlay-0"
@@ -56,7 +56,7 @@ export default function Events() {
                 alt=""
               />
             </div>
-            <nav role="navigation" class="nav-menu w-nav-menu" id="toggle-nav">
+            <nav role="navigation" className="nav-menu w-nav-menu" id="toggle-nav">
               {/* this code block map through all the links */}
               {Object.keys(navLinks).map((item) =>
                 navLinks[item].sublinks ? (
@@ -103,7 +103,7 @@ export default function Events() {
           data-autoplay="true"
           data-loop="true"
           data-wf-ignore="true"
-          class="background-video w-background-video w-background-video-atom"
+          className="background-video w-background-video w-background-video-atom"
         >
           <video
             autoplay=""
@@ -119,7 +119,7 @@ export default function Events() {
           ></video>
         </div>
         <div
-          class="w-layout-grid home-hero-grid"
+          className="w-layout-grid home-hero-grid"
           style={{
             display: "-webkit-box",
             display: "-webkit-flex",
@@ -135,29 +135,29 @@ export default function Events() {
             webkitFlexDirection: "column",
           }}
         >
-          <div class="hero-grid-column-1">
-            <h1 class="hero-title-text">
-              <span class="text-color">Events</span>
+          <div className="hero-grid-column-1">
+            <h1 className="hero-title-text">
+              <span className="text-color">Events</span>
             </h1>
-            <div class="div-line"></div>
+            <div className="div-line"></div>
           </div>
         </div>
       </div>
 
-      <div class="home-about-section" id="about-section">
-        <div class="vertical-line-top"></div>
-        <div class="w-layout-grid home-about-grid">
-          <div class="home-about-grid-column-1">
+      <div className="home-about-section" id="about-section">
+        <div className="vertical-line-top"></div>
+        <div className="w-layout-grid home-about-grid">
+          <div className="home-about-grid-column-1">
             <img
               src="/images/events-section/ascend-kerala.jpg"
               loading="lazy"
               alt=""
-              class="home-about-place-holder"
+              className="home-about-place-holder"
             />
           </div>
-          <div class="home-about-grid-column-2">
+          <div className="home-about-grid-column-2">
             <h2>ASCEND KERALA</h2>
-            <div class="div-line"></div>
+            <div className="div-line"></div>
             <p>
               Embright at ASCEND 2020 Kochi 09-10 January 2020 Government of
               Kerala organized Global Investors Meet ASCEND 2020 from 9th to
@@ -186,7 +186,7 @@ export default function Events() {
         </div>
 
         {/* <!-- Gallery section --> */}
-        <div class="vertical-line-bottom"></div>
+        <div className="vertical-line-bottom"></div>
       </div>
     </>
   );
