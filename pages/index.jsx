@@ -5,10 +5,10 @@ import { navLinks } from "../utils/nav-links";
 import { galleryItems } from "../utils/gallery-items";
 import { partnersList } from "../utils/partners-list";
 import { mentorsList } from "../utils/mentors-list";
-
 import { testimonialItems } from "../utils/testimonial-items";
+import Image from "next/image";
 
-export default function Home() {
+export default function Home({ props }) {
   const { pathname } = useRouter();
 
   useEffect(() => {
@@ -40,7 +40,11 @@ export default function Home() {
               className="brand w-nav-brand w--current"
             >
               <div className="brand-logo">
-                <img src="/images/logo/embright-logo-white.png" />
+                <Image
+                  src="/images/logo/embright-logo-white.png"
+                  width={220}
+                  height={100}
+                />
               </div>
             </a>
             <div
@@ -49,14 +53,14 @@ export default function Home() {
               aria-label="menu"
               role="button"
               // ariaControls="w-nav-overlay-0"
-              ariaHaspopup="menu"
-              ariaExpanded="tre"
+              aria-haspopup="menu"
+              aria-expanded="tre"
               id="menu-button-toggler"
             >
-              <img
+              <Image
                 src="/images/common/icon-menu.svg"
-                loading="lazy"
-                height="24"
+                width={24}
+                height={24}
                 alt=""
               />
             </div>
@@ -68,21 +72,28 @@ export default function Home() {
               {/* this code block map through all the links */}
               {Object.keys(navLinks).map((item) =>
                 navLinks[item].sublinks ? (
-                  <div className="dropdown">
+                  <div
+                    className="dropdown"
+                    key={navLinks[item].id}
+                    key={navLinks[item].id}
+                  >
                     <a className="nav-link w-nav-link dropbtn">
                       {navLinks[item].name}
                     </a>
                     <div className="dropdown-content">
                       {/* this code block maps through all the sub links */}
                       {Object.keys(navLinks[item].dpLinks).map((subItem) => (
-                        <a href={navLinks[item].dpLinks[subItem].link}>
+                        <a
+                          href={navLinks[item].dpLinks[subItem].link}
+                          key={navLinks[item].dpLinks[subItem].id}
+                        >
                           {navLinks[item].dpLinks[subItem].name}
                         </a>
                       ))}
                     </div>
                   </div>
                 ) : (
-                  <Link href={navLinks[item].link}>
+                  <Link href={navLinks[item].link} key={navLinks[item].id}>
                     <a
                       className={
                         navLinks[item].type === "normal"
@@ -137,22 +148,18 @@ export default function Home() {
                 target="_blank"
                 data-lity
               >
-                <img
+                <Image
                   src="/images/hero-section/icon-play.svg"
-                  loading="lazy"
-                  height="24"
+                  height={24}
+                  width={24}
                   alt=""
                   className="lightbox-icon"
                 />
                 <img
                   src="/images/hero-section/hero-section-lightbox-thumbnail.jpeg"
                   loading="lazy"
-                  height=""
-                  sizes="(max-width: 479px) 42vw, (max-width: 767px) 41vw, (max-width: 991px) 31vw, (max-width: 1279px) 42vw, 40vw"
-                  srcSet="
-                  /images/hero-section/hero-section-lightbox-thumbnail.jpeg  800w,
-                  /images/hero-section/hero-section-lightbox-thumbnail.jpeg 1024w
-                "
+                  height={500}
+                  width={500}
                   alt=""
                   className="lightbox-thumb"
                 />
@@ -160,7 +167,6 @@ export default function Home() {
             </div>
             <img
               src="/images/hero-section/hero-hexagon-icon.svg"
-              loading="lazy"
               alt=""
               className="hero-image-placeholder"
             />
@@ -189,7 +195,6 @@ export default function Home() {
                 />
                 <img
                   src="/images/home-section/home-section-icon-hex-left.svg"
-                  loading="lazy"
                   height=""
                   alt=""
                   className="image"
@@ -281,11 +286,9 @@ export default function Home() {
           <div className="partners-grid-vertical-spacing-block"></div>
           <div className="partners-grid-vertical-spacing-block"></div>
           {Object.keys(partnersList).map((logo) => (
-            <div className="partners-block">
+            <div className="partners-block" key={partnersList[logo].name}>
               <img
                 src={partnersList[logo].img}
-                loading="lazy"
-                height=""
                 alt={partnersList[logo].name}
                 className="partners-logo-image"
               />
@@ -301,21 +304,15 @@ export default function Home() {
           <div className="home-about-grid-column-1">
             <div className="lightbox-wrapper">
               <a className="lightbox-gallery w-inline-block">
-                <img
+                <Image
                   src="/images/about-section/about-section-camera-icon.svg"
-                  loading="lazy"
-                  height="24"
+                  height={24}
+                  width={24}
                   alt=""
                   className="lightbox-icon"
                 />
                 <img
                   src="/images/about-section/about-section-cover.jpeg"
-                  loading="lazy"
-                  sizes="(max-width: 479px) 42vw, (max-width: 767px) 41vw, (max-width: 991px) 31vw, (max-width: 1279px) 42vw, 40vw"
-                  srcset="
-                  /images/about-section/about-section-cover.jpeg  800w,
-                  /images/about-section/about-section-cover.jpeg 1024w
-                "
                   alt=""
                   className="lightbox-thumb"
                 />
@@ -360,31 +357,37 @@ export default function Home() {
         {/* <!-- Gallery section --> */}
         <div className="vertical-line-bottom"></div>
       </div>
-      <div className="home-classNamees-section">
-        <div className="home-classNamees-text">
+      <div className="home-classes-section">
+        <div className="home-classes-text">
           <div className="light-section-text-wrapper">
             <h6>Gallery</h6>
-            <h2 className="light-section-title-text">Check out our achievements</h2>
+            <h2 className="light-section-title-text">
+              Check out our achievements
+            </h2>
             <div className="div-line"></div>
           </div>
         </div>
-        <div className="home-classNamees-wrapper">
-          <div className="classNamees-list-wrapper w-dyn-list">
-            <div role="list" className="classNamees-list w-dyn-items">
+        <div className="home-classes-wrapper">
+          <div className="classes-list-wrapper w-dyn-list">
+            <div role="list" className="classes-list w-dyn-items">
               {/* <!-- item --> */}
               {Object.keys(galleryItems).map((idx) => (
-                <div role="listitem" className="classNamees-item w-dyn-item">
+                <div
+                  role="listitem"
+                  className="classes-item w-dyn-item"
+                  key={galleryItems[idx].id}
+                >
                   <a
-                    href={galleryItems[idx]}
-                    className="classNamees-item-link-block w-inline-block"
+                    href={galleryItems[idx].img}
+                    className="classes-item-link-block w-inline-block"
                   >
-                    <div className="classNamees-item-image-wrapper">
-                      <h3 className="classNamees-item-title-text"></h3>
+                    <div className="classes-item-image-wrapper">
+                      <h3 className="classes-item-title-text"></h3>
                       <div
                         style={{
-                          backgroundImage: `url(${galleryItems[idx]})`,
+                          backgroundImage: `url(${galleryItems[idx].img})`,
                         }}
-                        className="classNamees-item-image"
+                        className="classes-item-image"
                       ></div>
                     </div>
                   </a>
@@ -421,7 +424,10 @@ export default function Home() {
           <div className="w-layout-grid testimonials-grid">
             {/* <!-- block --> */}
             {Object.keys(testimonialItems).map((quote) => (
-              <div className="testimonial-block">
+              <div
+                className="testimonial-block"
+                key={testimonialItems[quote].id}
+              >
                 <img
                   src={testimonialItems[quote].img}
                   loading="lazy"
@@ -440,11 +446,12 @@ export default function Home() {
                     <a
                       href={testimonialItems[quote].social[social].link}
                       className="button-social w-inline-block"
+                      key={testimonialItems[quote].social[social].id}
                     >
-                      <img
+                      <Image
                         src={testimonialItems[quote].social[social].icon}
-                        loading="lazy"
-                        height="24"
+                        height={24}
+                        width={24}
                         alt=""
                         className="button-icon"
                       />
@@ -471,12 +478,15 @@ export default function Home() {
           <div className="home-trainers-list-wrapper w-dyn-list">
             <div role="list" className="trainers-list w-dyn-items">
               {Object.keys(mentorsList).map((mentor) => (
-                <div role="listitem" className="trainers-item w-dyn-item">
+                <div
+                  role="listitem"
+                  className="trainers-item w-dyn-item"
+                  key={mentorsList[mentor].id}
+                >
                   <a className="trainers-item-link-block w-inline-block">
                     <div className="trainers-image-wrapper-tilt-left">
                       <div className="trainers-image-wrapper">
                         <img
-                          loading="lazy"
                           src={mentorsList[mentor].img}
                           alt={mentorsList[mentor].name}
                           className="trainers-image"

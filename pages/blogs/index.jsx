@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { navLinks } from "../../utils/nav-links";
+import Image from "next/image";
 
 export default function Blogs({ blogList }) {
   const { pathname } = useRouter();
@@ -37,7 +38,11 @@ export default function Blogs({ blogList }) {
               className="brand w-nav-brand w--current"
             >
               <div className="brand-logo">
-                <img src="/images/logo/embright-logo-white.png" />
+                <Image
+                  src="/images/logo/embright-logo-white.png"
+                  width={200}
+                  height={100}
+                />
               </div>
             </a>
             <div
@@ -49,32 +54,38 @@ export default function Blogs({ blogList }) {
               aria-expanded="tre"
               id="menu-button-toggler"
             >
-              <img
+              <Image
                 src="/images/common/icon-menu.svg"
-                loading="lazy"
-                height="24"
-                alt=""
+                height={24}
+                width={24}
               />
             </div>
-            <nav role="navigation" className="nav-menu w-nav-menu" id="toggle-nav">
+            <nav
+              role="navigation"
+              className="nav-menu w-nav-menu"
+              id="toggle-nav"
+            >
               {/* this code block map through all the links */}
               {Object.keys(navLinks).map((item) =>
                 navLinks[item].sublinks ? (
-                  <div className="dropdown">
+                  <div className="dropdown" key={navLinks[item].id}>
                     <a className="nav-link w-nav-link dropbtn">
                       {navLinks[item].name}
                     </a>
                     <div className="dropdown-content">
                       {/* this code block maps through all the sub links */}
                       {Object.keys(navLinks[item].dpLinks).map((subItem) => (
-                        <a href={navLinks[item].dpLinks[subItem].link}>
+                        <a
+                          href={navLinks[item].dpLinks[subItem].link}
+                          key={navLinks[item].dpLinks[subItem].id}
+                        >
                           {navLinks[item].dpLinks[subItem].name}
                         </a>
                       ))}
                     </div>
                   </div>
                 ) : (
-                  <Link href={navLinks[item].link}>
+                  <Link href={navLinks[item].link} key={navLinks[item].id}>
                     <a
                       className={
                         navLinks[item].type === "normal"
@@ -106,14 +117,12 @@ export default function Blogs({ blogList }) {
           className="background-video w-background-video w-background-video-atom"
         >
           <video
-            autoplay=""
             loop=""
             style={{
               backgroundImage:
                 "url(/images/services-section/services-section-cover.jpeg)",
             }}
             muted=""
-            playsinline=""
             data-wf-ignore="true"
             data-object-fit="cover"
           ></video>
@@ -130,9 +139,9 @@ export default function Blogs({ blogList }) {
             paddingTop: "6em",
             paddingBottom: "6em",
             flexDirection: "column",
-            webkitBoxOrient: "vertical",
-            webkitBoxDirection: "normal",
-            webkitFlexDirection: "column",
+            WebkitBoxOrient: "vertical",
+            WebkitBoxDirection: "normal",
+            WebkitFlexDirection: "column",
           }}
         >
           <div className="hero-grid-column-1">
@@ -158,10 +167,9 @@ export default function Blogs({ blogList }) {
                   <Link href={`/blogs/${String(item.id)}`}>
                     <a className="home-news-item-link-block w-inline-block">
                       <div className="blog-item-image-wrapper">
-                        <img
-                          loading="lazy"
-                          src={item.CoverImage.url}
-                          alt=""
+                        <Image
+                          src={item.coverImage.url}
+                          layout="fill"
                           className="blog-item-image"
                         />
                       </div>
@@ -186,7 +194,7 @@ export default function Blogs({ blogList }) {
 }
 
 export const getStaticProps = async () => {
-  const data = await fetch(`${process.env.STRAPI_URL}/articles`);
+  const data = await fetch(`${process.env.STRAPI_URL}/embright-blogs`);
   const blogList = await data.json();
 
   return {

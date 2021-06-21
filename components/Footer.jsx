@@ -14,7 +14,7 @@ export default function FooterComponent() {
           >
             <div className="w-layout-grid footer-links-grid">
               {Object.keys(navLinks).map((item) => (
-                <Link href={navLinks[item].link}>
+                <Link href={navLinks[item].link} key={navLinks[item].id}>
                   <a className="footer-link">{navLinks[item].name}</a>
                 </Link>
               ))}
@@ -30,6 +30,7 @@ export default function FooterComponent() {
                   className="footer-link"
                   target="_blank"
                   rel="noopener"
+                  key={socialLinks[sm].id}
                 >
                   {socialLinks[sm].name}
                 </a>

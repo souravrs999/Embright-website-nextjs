@@ -1,11 +1,11 @@
-import { useEffect } from "react";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
+import { navLinks } from "../utils/nav-links";
+import { serviceItems } from "../utils/service-items";
 import Link from "next/link";
-import { navLinks } from "../../utils/nav-links";
-import ReactMarkdown from "react-markdown";
 import Image from "next/image";
 
-export default function Blog({ blogData }) {
+export default function Services() {
   const { pathname } = useRouter();
 
   useEffect(() => {
@@ -39,11 +39,7 @@ export default function Blog({ blogData }) {
               className="brand w-nav-brand w--current"
             >
               <div className="brand-logo">
-                <Image
-                  src="/images/logo/embright-logo-white.png"
-                  width={200}
-                  height={100}
-                />
+                <img src="/images/logo/embright-logo-white.png" />
               </div>
             </a>
             <div
@@ -55,10 +51,10 @@ export default function Blog({ blogData }) {
               aria-expanded="tre"
               id="menu-button-toggler"
             >
-              <Image
+              <img
                 src="/images/common/icon-menu.svg"
-                height={24}
-                width={24}
+                loading="lazy"
+                height="24"
                 alt=""
               />
             </div>
@@ -67,7 +63,6 @@ export default function Blog({ blogData }) {
               className="nav-menu w-nav-menu"
               id="toggle-nav"
             >
-              {/* this code block map through all the links */}
               {Object.keys(navLinks).map((item) =>
                 navLinks[item].sublinks ? (
                   <div className="dropdown" key={navLinks[item].id}>
@@ -75,7 +70,6 @@ export default function Blog({ blogData }) {
                       {navLinks[item].name}
                     </a>
                     <div className="dropdown-content">
-                      {/* this code block maps through all the sub links */}
                       {Object.keys(navLinks[item].dpLinks).map((subItem) => (
                         <a
                           href={navLinks[item].dpLinks[subItem].link}
@@ -106,9 +100,9 @@ export default function Blog({ blogData }) {
               )}
             </nav>
           </div>
-
-          {/* <!-- Hero section --> */}
         </div>
+
+        {/* <!-- Hero section --> */}
 
         <div
           data-poster-url=""
@@ -119,15 +113,20 @@ export default function Blog({ blogData }) {
           className="background-video w-background-video w-background-video-atom"
         >
           <video
+            autoPlay=""
             loop=""
             style={{
               backgroundImage:
                 "url(/images/services-section/services-section-cover.jpeg)",
             }}
             muted=""
+            playsInline=""
             data-wf-ignore="true"
             data-object-fit="cover"
-          ></video>
+          >
+            <source src="" data-wf-ignore="true" />
+            <source src="" data-wf-ignore="true" />
+          </video>
         </div>
         <div
           className="w-layout-grid home-hero-grid"
@@ -141,65 +140,47 @@ export default function Blog({ blogData }) {
             paddingTop: "6em",
             paddingBottom: "6em",
             flexDirection: "column",
-            WebkitBoxOrient: "vertical",
-            WebkitBoxDirection: "normal",
-            WebkitFlexDirection: "column",
+            webkitBoxOrient: "vertical",
+            webkitBoxDirection: "normal",
+            webkitFlexDirection: "column",
           }}
         >
           <div className="hero-grid-column-1">
             <h1 className="hero-title-text">
-              <span className="text-color">Blogs</span>
+              <span className="text-color">Services</span>
             </h1>
             <div className="div-line"></div>
           </div>
         </div>
       </div>
 
-      {/* Blogs section */}
-      <div className="aux-section">
-        <div className="aux-block top-margin-negative">
-          <div className="outline-block padding-bottom-1-2x w-clearfix">
-            <div
-              style={{
-                backgroundImage: `url(${blogData.coverImage.url})`,
-              }}
-              className="news-image"
-            ></div>
-            <div className="w-richtext">
-              <h3>{blogData.Title}</h3>
-              <ReactMarkdown>{blogData.Body}</ReactMarkdown>
-            </div>
+      {/* <!-- Home section --> */}
+      <div className="home-features-section" id="home-section">
+        <div className="home-features-wrapper">
+          <div id="Features" className="w-layout-grid home-features-grid">
+            {Object.keys(serviceItems).map((item) => (
+              <a href={serviceItems[item].link} key={serviceItems[item].id}>
+                <div className="home-features-block">
+                  <div className="home-features-icon-wrapper">
+                    <Image
+                      src={serviceItems[item].img}
+                      height={200}
+                      width={200}
+                      alt=""
+                      className="image"
+                    />
+                  </div>
+                  <h3 className="home-features-title-text">
+                    {serviceItems[item].name}
+                  </h3>
+                  <div className="div-line"></div>
+                  <p>{serviceItems[item].desc}</p>
+                </div>
+              </a>
+            ))}
           </div>
         </div>
       </div>
     </>
   );
-}
-
-export async function getStaticPaths() {
-  const res = await fetch(`${process.env.STRAPI_URL}/embright-blogs`);
-  const blogList = await res.json();
-
-  return {
-    paths: blogList.map((item) => ({
-      params: {
-        slug: String(item.id),
-      },
-    })),
-    fallback: false,
-  };
-}
-
-export async function getStaticProps({ params }) {
-  const data = await fetch(
-    `${process.env.STRAPI_URL}/embright-blogs?id=${params.slug}`
-  );
-  const blogData = await data.json();
-
-  return {
-    props: {
-      blogData: blogData[0],
-    },
-    revalidate: 60,
-  };
 }

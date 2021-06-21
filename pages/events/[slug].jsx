@@ -5,7 +5,7 @@ import { navLinks } from "../../utils/nav-links";
 import ReactMarkdown from "react-markdown";
 import Image from "next/image";
 
-export default function Blog({ blogData }) {
+export default function Blog({ eventData }) {
   const { pathname } = useRouter();
 
   useEffect(() => {
@@ -122,7 +122,7 @@ export default function Blog({ blogData }) {
             loop=""
             style={{
               backgroundImage:
-                "url(/images/services-section/services-section-cover.jpeg)",
+                "url(/images/events-section/events-section-cover.jpeg)",
             }}
             muted=""
             data-wf-ignore="true"
@@ -161,13 +161,13 @@ export default function Blog({ blogData }) {
           <div className="outline-block padding-bottom-1-2x w-clearfix">
             <div
               style={{
-                backgroundImage: `url(${blogData.coverImage.url})`,
+                backgroundImage: `url(${eventData.coverImage.url})`,
               }}
               className="news-image"
             ></div>
             <div className="w-richtext">
-              <h3>{blogData.Title}</h3>
-              <ReactMarkdown>{blogData.Body}</ReactMarkdown>
+              <h3>{eventData.Title}</h3>
+              <ReactMarkdown>{eventData.Body}</ReactMarkdown>
             </div>
           </div>
         </div>
@@ -177,7 +177,7 @@ export default function Blog({ blogData }) {
 }
 
 export async function getStaticPaths() {
-  const res = await fetch(`${process.env.STRAPI_URL}/embright-blogs`);
+  const res = await fetch(`${process.env.STRAPI_URL}/embright-events`);
   const blogList = await res.json();
 
   return {
@@ -192,13 +192,13 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const data = await fetch(
-    `${process.env.STRAPI_URL}/embright-blogs?id=${params.slug}`
+    `${process.env.STRAPI_URL}/embright-events?id=${params.slug}`
   );
-  const blogData = await data.json();
+  const eventData = await data.json();
 
   return {
     props: {
-      blogData: blogData[0],
+      eventData: eventData[0],
     },
     revalidate: 60,
   };

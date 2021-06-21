@@ -1,9 +1,10 @@
-import { useRouter } from "next/router";
 import { useEffect } from "react";
-import { navLinks } from "../utils/nav-links";
+import { useRouter } from "next/router";
 import Link from "next/link";
+import { navLinks } from "../../utils/nav-links";
+import Image from "next/image";
 
-export default function Events() {
+export default function Blogs({ eventList }) {
   const { pathname } = useRouter();
 
   useEffect(() => {
@@ -37,7 +38,11 @@ export default function Events() {
               className="brand w-nav-brand w--current"
             >
               <div className="brand-logo">
-                <img src="/images/logo/embright-logo-white.png" />
+                <Image
+                  src="/images/logo/embright-logo-white.png"
+                  width={200}
+                  height={100}
+                />
               </div>
             </a>
             <div
@@ -49,32 +54,38 @@ export default function Events() {
               aria-expanded="tre"
               id="menu-button-toggler"
             >
-              <img
+              <Image
                 src="/images/common/icon-menu.svg"
-                loading="lazy"
-                height="24"
-                alt=""
+                height={24}
+                width={24}
               />
             </div>
-            <nav role="navigation" className="nav-menu w-nav-menu" id="toggle-nav">
+            <nav
+              role="navigation"
+              className="nav-menu w-nav-menu"
+              id="toggle-nav"
+            >
               {/* this code block map through all the links */}
               {Object.keys(navLinks).map((item) =>
                 navLinks[item].sublinks ? (
-                  <div className="dropdown">
+                  <div className="dropdown" key={navLinks[item].id}>
                     <a className="nav-link w-nav-link dropbtn">
                       {navLinks[item].name}
                     </a>
                     <div className="dropdown-content">
                       {/* this code block maps through all the sub links */}
                       {Object.keys(navLinks[item].dpLinks).map((subItem) => (
-                        <a href={navLinks[item].dpLinks[subItem].link}>
+                        <a
+                          href={navLinks[item].dpLinks[subItem].link}
+                          key={navLinks[item].dpLinks[subItem].id}
+                        >
                           {navLinks[item].dpLinks[subItem].name}
                         </a>
                       ))}
                     </div>
                   </div>
                 ) : (
-                  <Link href={navLinks[item].link}>
+                  <Link href={navLinks[item].link} key={navLinks[item].id}>
                     <a
                       className={
                         navLinks[item].type === "normal"
@@ -106,14 +117,12 @@ export default function Events() {
           className="background-video w-background-video w-background-video-atom"
         >
           <video
-            autoplay=""
             loop=""
             style={{
               backgroundImage:
                 "url(/images/events-section/events-section-cover.jpeg)",
             }}
             muted=""
-            playsinline=""
             data-wf-ignore="true"
             data-object-fit="cover"
           ></video>
@@ -130,9 +139,9 @@ export default function Events() {
             paddingTop: "6em",
             paddingBottom: "6em",
             flexDirection: "column",
-            webkitBoxOrient: "vertical",
-            webkitBoxDirection: "normal",
-            webkitFlexDirection: "column",
+            WebkitBoxOrient: "vertical",
+            WebkitBoxDirection: "normal",
+            WebkitFlexDirection: "column",
           }}
         >
           <div className="hero-grid-column-1">
@@ -144,50 +153,54 @@ export default function Events() {
         </div>
       </div>
 
-      <div className="home-about-section" id="about-section">
-        <div className="vertical-line-top"></div>
-        <div className="w-layout-grid home-about-grid">
-          <div className="home-about-grid-column-1">
-            <img
-              src="/images/events-section/ascend-kerala.jpg"
-              loading="lazy"
-              alt=""
-              className="home-about-place-holder"
-            />
-          </div>
-          <div className="home-about-grid-column-2">
-            <h2>ASCEND KERALA</h2>
-            <div className="div-line"></div>
-            <p>
-              Embright at ASCEND 2020 Kochi 09-10 January 2020 Government of
-              Kerala organized Global Investors Meet ASCEND 2020 from 9th to
-              10th of January 2020 at Grand Hyatt, Cochin. The event was to
-              showcase the advancements of the state, its investor-friendly
-              nature, initiatives of the state government and the business
-              opportunities across various sectors. The event hosted around 750
-              serious investors and entrepreneurs, who actively participated in
-              the event. Embright Infotech displayed the product Auticare which
-              is an XR-AI based Assistive Technology Platform for Autism
-              Spectrum Disorder and Special Education. The device Auticare was
-              one among the major exhibit at the two dozen stalls that exhibited
-              products of different start-ups in the event. Embright Infotech
-              had a great time meeting many professionals and investors from
-              different sectors. The representatives of the company received
-              many encouraging comments and networks from entrepreneurs and
-              investors of different sectors for the innovative solution aimed
-              at assisting autistic children. ASCEND 2020 saw 100-odd projects,
-              ratified by KPMG as viable, presented across sectors such as
-              petrochemicals, agro and food-processing, defence, life sciences,
-              aeropolis, tourism and hospitality, ports and harbours, fisheries,
-              infrastructure, mobility development, logistics, and electronic
-              hardware
-            </p>
+      {/* Blogs section */}
+      <div className="aux-section">
+        <div className="aux-block top-margin-negative">
+          <div className="home-news-list-wrapper w-dyn-list">
+            <div role="list" className="home-news-list w-dyn-items">
+              {eventList.map((item) => (
+                <div
+                  role="listitem"
+                  className="home-news-item w-dyn-item"
+                  key={item.id}
+                >
+                  <Link href={`/events/${String(item.id)}`}>
+                    <a className="home-news-item-link-block w-inline-block">
+                      <div className="blog-item-image-wrapper">
+                        <Image
+                          src={item.coverImage.url}
+                          layout="fill"
+                          className="blog-item-image"
+                        />
+                      </div>
+                      <div className="blog-item-text-wrapper">
+                        <h6>{item.PublishDate}</h6>
+                        <h3 className="blog-item-title-text">{item.Title}</h3>
+                        <div className="horizontal-line"></div>
+                        <p className="blog-item-short-desciption-text">
+                          {`${item.Body.slice(0, 100)}...`}
+                        </p>
+                      </div>
+                    </a>
+                  </Link>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-
-        {/* <!-- Gallery section --> */}
-        <div className="vertical-line-bottom"></div>
       </div>
     </>
   );
 }
+
+export const getStaticProps = async () => {
+  const data = await fetch(`${process.env.STRAPI_URL}/embright-events`);
+  const eventList = await data.json();
+
+  return {
+    props: {
+      eventList,
+    },
+    revalidate: 60,
+  };
+};

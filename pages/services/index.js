@@ -1,8 +1,9 @@
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import { navLinks } from "../utils/nav-links";
-import { serviceItems } from "../utils/service-items";
+import { navLinks } from "../../utils/nav-links";
+import { serviceItems } from "../../utils/service-items";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Services() {
   const { pathname } = useRouter();
@@ -57,23 +58,30 @@ export default function Services() {
                 alt=""
               />
             </div>
-            <nav role="navigation" className="nav-menu w-nav-menu" id="toggle-nav">
+            <nav
+              role="navigation"
+              className="nav-menu w-nav-menu"
+              id="toggle-nav"
+            >
               {Object.keys(navLinks).map((item) =>
                 navLinks[item].sublinks ? (
-                  <div className="dropdown">
+                  <div className="dropdown" key={navLinks[item].id}>
                     <a className="nav-link w-nav-link dropbtn">
                       {navLinks[item].name}
                     </a>
                     <div className="dropdown-content">
                       {Object.keys(navLinks[item].dpLinks).map((subItem) => (
-                        <a href={navLinks[item].dpLinks[subItem].link}>
+                        <a
+                          href={navLinks[item].dpLinks[subItem].link}
+                          key={navLinks[item].dpLinks[subItem].id}
+                        >
                           {navLinks[item].dpLinks[subItem].name}
                         </a>
                       ))}
                     </div>
                   </div>
                 ) : (
-                  <Link href={navLinks[item].link}>
+                  <Link href={navLinks[item].link} key={navLinks[item].id}>
                     <a
                       className={
                         navLinks[item].type === "normal"
@@ -105,25 +113,19 @@ export default function Services() {
           className="background-video w-background-video w-background-video-atom"
         >
           <video
-            autoplay=""
+            autoPlay=""
             loop=""
             style={{
               backgroundImage:
                 "url(/images/services-section/services-section-cover.jpeg)",
             }}
             muted=""
-            playsinline=""
+            playsInline=""
             data-wf-ignore="true"
             data-object-fit="cover"
           >
-            <source
-              src=""
-              data-wf-ignore="true"
-            />
-            <source
-              src=""
-              data-wf-ignore="true"
-            />
+            <source src="" data-wf-ignore="true" />
+            <source src="" data-wf-ignore="true" />
           </video>
         </div>
         <div
@@ -157,13 +159,13 @@ export default function Services() {
         <div className="home-features-wrapper">
           <div id="Features" className="w-layout-grid home-features-grid">
             {Object.keys(serviceItems).map((item) => (
-              <a href={serviceItems[item].link}>
+              <a href={`services/${serviceItems[item].id}`} key={serviceItems[item].id}>
                 <div className="home-features-block">
                   <div className="home-features-icon-wrapper">
-                    <img
+                    <Image
                       src={serviceItems[item].img}
-                      loading="lazy"
-                      height="150"
+                      height={200}
+                      width={200}
                       alt=""
                       className="image"
                     />
@@ -172,7 +174,7 @@ export default function Services() {
                     {serviceItems[item].name}
                   </h3>
                   <div className="div-line"></div>
-                  <p>{serviceItems[item].desc}</p>
+                  <p>{`${serviceItems[item].desc.slice(0, 100)}...`}</p>
                 </div>
               </a>
             ))}
