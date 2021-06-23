@@ -159,35 +159,51 @@ export default function Services() {
         </div>
       </div>
 
-      {/* <!-- Home section --> */}
-      <div className="home-features-section" id="home-section">
-        <div className="home-features-wrapper">
-          <div id="Features" className="w-layout-grid home-features-grid">
-            {Object.keys(serviceItems).map((item) => (
-              <a
-                href={`services/${serviceItems[item].id}`}
-                key={serviceItems[item].id}
-              >
-                <div className="home-features-block">
-                  <div className="home-features-icon-wrapper">
+      {/* <!-- About section --> */}
+      <div className="home-about-section">
+        {Object.keys(serviceItems).map((item) => (
+          <div
+            className="w-layout-grid home-about-grid"
+            key={serviceItems[item].id}
+          >
+            <div className="home-about-grid-column-1">
+              <div className="lightbox-wrapper">
+                <a
+                  className="lightbox-gallery w-inline-block"
+                  href={serviceItems[item].link}
+                >
+                  <div className="lightbox-icon">
                     <Image
-                      src={serviceItems[item].img}
-                      height={200}
-                      width={200}
+                      src="/images/common/icon-play.svg"
                       alt=""
-                      className="image"
+                      height={150}
+                      width={150}
+                      className="lightbox-icon"
                     />
                   </div>
-                  <h3 className="home-features-title-text">
-                    {serviceItems[item].name}
-                  </h3>
-                  <div className="div-line"></div>
-                  <p>{`${serviceItems[item].desc.slice(0, 100)}...`}</p>
-                </div>
-              </a>
-            ))}
+                  <Image
+                    src={serviceItems[item].img}
+                    alt=""
+                    height={300}
+                    width={300}
+                    className="lightbox-thumb"
+                  />
+                </a>
+              </div>
+              <Image
+                src={serviceItems[item].bg}
+                height={600}
+                width={600}
+                alt=""
+              />
+            </div>
+            <div className="home-about-grid-column-2">
+              <h2>{serviceItems[item].name}</h2>
+              <div className="div-line"></div>
+              <p>{serviceItems[item].desc}</p>
+            </div>
           </div>
-        </div>
+        ))}
       </div>
     </>
   );

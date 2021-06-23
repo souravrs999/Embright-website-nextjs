@@ -10,17 +10,17 @@ export const testimonialItems = {
       facebook: {
         id: "ea1813aa-d0e5-11eb-b8bc-0242ac130003",
         icon: "/images/team-section/team-section-icon-facebook.svg",
-        link: "",
+        link: "https://www.facebook.com/Sathyanarayanan.AR",
       },
-      twitter: {
+      linkedIn: {
         id: "ea181472-d0e5-11eb-b8bc-0242ac130003",
-        icon: "/images/team-section/team-section-icon-twitter.svg",
-        link: "",
+        icon: "/images/team-section/team-section-icon-linkedin.svg",
+        link: "https://www.linkedin.com/in/sathyanarayanan-ar-b912a716/",
       },
       instagram: {
         id: "ea181530-d0e5-11eb-b8bc-0242ac130003",
         icon: "/images/team-section/team-section-icon-instagram.svg",
-        link: "",
+        link: "https://www.instagram.com/sathyanarayananar/",
       },
     },
   },
@@ -35,17 +35,17 @@ export const testimonialItems = {
       facebook: {
         id: "ea1815ee-d0e5-11eb-b8bc-0242ac130003",
         icon: "/images/team-section/team-section-icon-facebook.svg",
-        link: "",
+        link: "https://www.facebook.com/bobin.chandra",
       },
-      twitter: {
+      linkedIn: {
         id: "ea18186e-d0e5-11eb-b8bc-0242ac130003",
-        icon: "/images/team-section/team-section-icon-twitter.svg",
-        link: "",
+        icon: "/images/team-section/team-section-icon-linkedin.svg",
+        link: "https://www.linkedin.com/in/bobinchandra/",
       },
       instagram: {
         id: "ea181936-d0e5-11eb-b8bc-0242ac130003",
         icon: "/images/team-section/team-section-icon-instagram.svg",
-        link: "",
+        link: "https://www.instagram.com/bobyhelios/",
       },
     },
   },

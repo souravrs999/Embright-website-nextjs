@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { navLinks } from "../utils/nav-links";
@@ -7,9 +7,11 @@ import { partnersList } from "../utils/partners-list";
 import { mentorsList } from "../utils/mentors-list";
 import { testimonialItems } from "../utils/testimonial-items";
 import Image from "next/image";
+// import FsLightbox from 'fslightbox-react'
 
 export default function Home({ props }) {
   const { pathname } = useRouter();
+  // const [toggler, setToggler] = useState(false)
 
   useEffect(() => {
     document
@@ -119,12 +121,12 @@ export default function Home({ props }) {
           <div className="hero-grid-column-1">
             <h1 className="hero-title-text">
               Take one step to
-              <span className="text-color">the inevitable future,</span> Start
+              <span className="text-color"> the inevitable future,</span> Start
               automating your dream!
             </h1>
             <div className="div-line"></div>
             <p className="hero-paragraph-text">
-              We’re constantly pushing ourselves to step beyond what’s possible
+              We are constantly pushing ourselves to step beyond what’s possible
               in Virtual Reality, Augmented Reality, Mixed Reality, AI and IoT
               to give our clients an experience like never before. Break down
               the physical and virtual world barriers using our innovative
@@ -147,7 +149,6 @@ export default function Home({ props }) {
                 href="https://www.youtube.com/embed/zPv3Zh2qh9E?autoplay=1"
                 target="_blank"
                 rel="noreferrer"
-                data-lity
               >
                 <Image
                   src="/images/hero-section/hero-section-lightbox-thumbnail.jpeg"
@@ -378,6 +379,8 @@ export default function Home({ props }) {
                 >
                   <a
                     href={galleryItems[idx].img}
+                    target="_blank"
+                    rel="noopener"
                     className="classes-item-link-block w-inline-block"
                   >
                     <div className="classes-item-image-wrapper">
@@ -391,6 +394,7 @@ export default function Home({ props }) {
                     </div>
                   </a>
                 </div>
+                
               ))}
             </div>
           </div>

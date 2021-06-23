@@ -183,6 +183,7 @@ export default function Blogs({ eventList }) {
                         <p className="blog-item-short-desciption-text">
                           {`${item.Body.slice(0, 100)}...`}
                         </p>
+                        <h6>Read More...</h6>
                       </div>
                     </a>
                   </Link>
