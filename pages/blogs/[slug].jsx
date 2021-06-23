@@ -43,6 +43,7 @@ export default function Blog({ blogData }) {
                   src="/images/logo/embright-logo-white.png"
                   width={200}
                   height={100}
+                  alt=""
                 />
               </div>
             </a>

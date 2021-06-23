@@ -44,6 +44,7 @@ export default function Home({ props }) {
                   src="/images/logo/embright-logo-white.png"
                   width={220}
                   height={100}
+                  alt=""
                 />
               </div>
             </a>
@@ -74,7 +75,6 @@ export default function Home({ props }) {
                 navLinks[item].sublinks ? (
                   <div
                     className="dropdown"
-                    key={navLinks[item].id}
                     key={navLinks[item].id}
                   >
                     <a className="nav-link w-nav-link dropbtn">
@@ -146,28 +146,24 @@ export default function Home({ props }) {
                 className="lightbox-gallery w-inline-block w-lightbox"
                 href="https://www.youtube.com/embed/zPv3Zh2qh9E?autoplay=1"
                 target="_blank"
+                rel="noreferrer"
                 data-lity
               >
                 <Image
-                  src="/images/hero-section/icon-play.svg"
-                  height={24}
-                  width={24}
-                  alt=""
-                  className="lightbox-icon"
-                />
-                <img
                   src="/images/hero-section/hero-section-lightbox-thumbnail.jpeg"
                   loading="lazy"
-                  height={500}
-                  width={500}
+                  height={300}
+                  width={300}
                   alt=""
                   className="lightbox-thumb"
                 />
               </a>
             </div>
-            <img
+            <Image
               src="/images/hero-section/hero-hexagon-icon.svg"
               alt=""
+              height={600}
+              width={600}
               className="hero-image-placeholder"
             />
           </div>
@@ -186,19 +182,21 @@ export default function Home({ props }) {
           <div id="Features" className="w-layout-grid home-features-grid">
             <div className="home-features-block">
               <div className="home-features-icon-wrapper">
-                <img
-                  src="/images/home-section/home-section-vr-thumb.svg"
-                  loading="lazy"
-                  height="64"
-                  alt=""
-                  className="home-features-icon"
-                />
-                <img
-                  src="/images/home-section/home-section-icon-hex-left.svg"
-                  height=""
-                  alt=""
-                  className="image"
-                />
+                <div className="home-features-icon">
+                  <Image
+                    src="/images/home-section/home-section-vr-thumb.svg"
+                    layout="fill"
+                    alt=""
+                  />
+                </div>
+                <div className="image">
+                  <Image
+                    src="/images/home-section/home-section-icon-hex-left.svg"
+                    height={150}
+                    width={150}
+                    alt=""
+                  />
+                </div>
               </div>
               <h3 className="home-features-title-text">Auticare</h3>
               <div className="div-line"></div>
@@ -209,20 +207,21 @@ export default function Home({ props }) {
             </div>
             <div className="home-features-block">
               <div className="home-features-icon-wrapper">
-                <img
-                  src="/images/home-section/home-section-crypto-thumb.svg"
-                  loading="lazy"
-                  height="64"
-                  width="64"
-                  alt=""
-                  className="home-features-icon"
-                />
-                <img
-                  src="/images/home-section/home-section-icon-hex-right.svg"
-                  loading="lazy"
-                  height="128"
-                  alt=""
-                />
+                <div className="home-features-icon">
+                  <Image
+                    src="/images/home-section/home-section-crypto-thumb.svg"
+                    layout="fill"
+                    alt=""
+                  />
+                </div>
+                <div className="image">
+                  <Image
+                    src="/images/home-section/home-section-icon-hex-right.svg"
+                    height={150}
+                    width={150}
+                    alt=""
+                  />
+                </div>
               </div>
               <h3 className="home-features-title-text">Mindcare XR</h3>
               <div className="div-line"></div>
@@ -233,20 +232,21 @@ export default function Home({ props }) {
             </div>
             <div className="home-features-block">
               <div className="home-features-icon-wrapper">
-                <img
-                  src="/images/home-section/home-section-ai-thumb.svg"
-                  loading="lazy"
-                  height=""
-                  width="64"
-                  alt=""
-                  className="home-features-icon"
-                />
-                <img
-                  src="/images/home-section/home-section-icon-hex-left.svg"
-                  loading="lazy"
-                  height="128"
-                  alt=""
-                />
+                <div className="home-features-icon">
+                  <Image
+                    src="/images/home-section/home-section-ai-thumb.svg"
+                    layout="fill"
+                    alt=""
+                  />
+                </div>
+                <div className="image">
+                  <Image
+                    src="/images/home-section/home-section-icon-hex-left.svg"
+                    height={150}
+                    width={150}
+                    alt=""
+                  />
+                </div>
               </div>
               <h3 className="home-features-title-text">Eduoskus XR</h3>
               <div className="div-line"></div>
@@ -254,20 +254,21 @@ export default function Home({ props }) {
             </div>
             <div className="home-features-block">
               <div className="home-features-icon-wrapper">
-                <img
-                  src="/images/home-section/home-section-cpu-thumb.svg"
-                  loading="lazy"
-                  height="64"
-                  alt=""
-                  className="home-features-icon"
-                />
-                <img
-                  src="/images/home-section/home-section-icon-hex-right.svg"
-                  loading="lazy"
-                  height=""
-                  alt=""
-                  className="home-features-icon-placeholder"
-                />
+                <div className="home-features-icon">
+                  <Image
+                    src="/images/home-section/home-section-cpu-thumb.svg"
+                    layout="fill"
+                    alt=""
+                  />
+                </div>
+                <div className="image">
+                  <Image
+                    src="/images/home-section/home-section-icon-hex-right.svg"
+                    height={150}
+                    width={150}
+                    alt=""
+                  />
+                </div>
               </div>
               <h3 className="home-features-title-text">XR Event</h3>
               <div className="div-line"></div>
@@ -287,9 +288,11 @@ export default function Home({ props }) {
           <div className="partners-grid-vertical-spacing-block"></div>
           {Object.keys(partnersList).map((logo) => (
             <div className="partners-block" key={partnersList[logo].name}>
-              <img
+              <Image
                 src={partnersList[logo].img}
                 alt={partnersList[logo].name}
+                width={100}
+                height={70}
                 className="partners-logo-image"
               />
             </div>
@@ -305,24 +308,20 @@ export default function Home({ props }) {
             <div className="lightbox-wrapper">
               <a className="lightbox-gallery w-inline-block">
                 <Image
-                  src="/images/about-section/about-section-camera-icon.svg"
-                  height={24}
-                  width={24}
-                  alt=""
-                  className="lightbox-icon"
-                />
-                <img
                   src="/images/about-section/about-section-cover.jpeg"
                   alt=""
+                  height={300}
+                  width={300}
                   className="lightbox-thumb"
                 />
               </a>
             </div>
-            <img
+            <Image
               src="/images/about-section/about-section-hex-left.svg"
-              loading="lazy"
+              height={600}
+              width={600}
               alt=""
-              className="home-about-place-holder"
+              // className="home-about-place-holder"
             />
           </div>
           <div className="home-about-grid-column-2">
@@ -428,11 +427,10 @@ export default function Home({ props }) {
                 className="testimonial-block"
                 key={testimonialItems[quote].id}
               >
-                <img
+                <Image
                   src={testimonialItems[quote].img}
-                  loading="lazy"
-                  width="200"
-                  height="200"
+                  width={200}
+                  height={200}
                   alt=""
                   className="quote-image"
                 />
@@ -486,16 +484,19 @@ export default function Home({ props }) {
                   <a className="trainers-item-link-block w-inline-block">
                     <div className="trainers-image-wrapper-tilt-left">
                       <div className="trainers-image-wrapper">
-                        <img
+                        <Image
                           src={mentorsList[mentor].img}
                           alt={mentorsList[mentor].name}
+                          height={100}
+                          width={100}
                           className="trainers-image"
                         />
                       </div>
-                      <img
+                      <Image
                         src={mentorsList[mentor].bg}
-                        loading="lazy"
-                        className="trainers-image-placeholder"
+                        height={200}
+                        width={200}
+                        alt=""
                       />
                     </div>
                     <div
@@ -503,15 +504,7 @@ export default function Home({ props }) {
                     trainers-image-wrapper-tilt-right
                     w-condition-invisible
                   "
-                    >
-                      <div className="trainers-image-wrapper"></div>
-                      <img
-                        src={mentorsList[mentor].bg}
-                        loading="lazy"
-                        alt=""
-                        className="trainers-image-placeholder"
-                      />
-                    </div>
+                    ></div>
                     <h3>{mentorsList[mentor].name}</h3>
 
                     <div className="div-line"></div>

@@ -42,6 +42,7 @@ export default function Blogs({ blogList }) {
                   src="/images/logo/embright-logo-white.png"
                   width={200}
                   height={100}
+                  alt=""
                 />
               </div>
             </a>
@@ -58,6 +59,7 @@ export default function Blogs({ blogList }) {
                 src="/images/common/icon-menu.svg"
                 height={24}
                 width={24}
+                alt=""
               />
             </div>
             <nav
@@ -171,6 +173,7 @@ export default function Blogs({ blogList }) {
                           src={item.coverImage.url}
                           layout="fill"
                           className="blog-item-image"
+                          alt=""
                         />
                       </div>
                       <div className="blog-item-text-wrapper">

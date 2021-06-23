@@ -29,7 +29,7 @@ export default function FooterComponent() {
                   href={socialLinks[sm].link}
                   className="footer-link"
                   target="_blank"
-                  rel="noopener"
+                  rel="noreferrer"
                   key={socialLinks[sm].id}
                 >
                   {socialLinks[sm].name}

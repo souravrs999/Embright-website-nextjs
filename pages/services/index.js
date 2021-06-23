@@ -39,7 +39,12 @@ export default function Services() {
               className="brand w-nav-brand w--current"
             >
               <div className="brand-logo">
-                <img src="/images/logo/embright-logo-white.png" />
+                <Image
+                  src="/images/logo/embright-logo-white.png"
+                  width={200}
+                  height={100}
+                  alt=""
+                />
               </div>
             </a>
             <div
@@ -51,10 +56,10 @@ export default function Services() {
               aria-expanded="tre"
               id="menu-button-toggler"
             >
-              <img
+              <Image
                 src="/images/common/icon-menu.svg"
-                loading="lazy"
-                height="24"
+                height={24}
+                width={24}
                 alt=""
               />
             </div>
@@ -140,9 +145,9 @@ export default function Services() {
             paddingTop: "6em",
             paddingBottom: "6em",
             flexDirection: "column",
-            webkitBoxOrient: "vertical",
-            webkitBoxDirection: "normal",
-            webkitFlexDirection: "column",
+            WebkitBoxOrient: "vertical",
+            WebkitBoxDirection: "normal",
+            WebkitFlexDirection: "column",
           }}
         >
           <div className="hero-grid-column-1">
@@ -159,7 +164,10 @@ export default function Services() {
         <div className="home-features-wrapper">
           <div id="Features" className="w-layout-grid home-features-grid">
             {Object.keys(serviceItems).map((item) => (
-              <a href={`services/${serviceItems[item].id}`} key={serviceItems[item].id}>
+              <a
+                href={`services/${serviceItems[item].id}`}
+                key={serviceItems[item].id}
+              >
                 <div className="home-features-block">
                   <div className="home-features-icon-wrapper">
                     <Image
