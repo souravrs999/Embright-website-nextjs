@@ -380,7 +380,7 @@ export default function Home({ props }) {
                   <a
                     href={galleryItems[idx].img}
                     target="_blank"
-                    rel="noopener"
+                    rel="noreferrer"
                     className="classes-item-link-block w-inline-block"
                   >
                     <div className="classes-item-image-wrapper">
