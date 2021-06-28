@@ -150,6 +150,15 @@ export default function Home({ props }) {
                 target="_blank"
                 rel="noreferrer"
               >
+                <div className="lightbox-icon">
+                    <Image
+                      src="/images/common/icon-play.svg"
+                      alt=""
+                      height={150}
+                      width={150}
+                      className="lightbox-icon"
+                    />
+                  </div>
                 <Image
                   src="/images/hero-section/hero-section-lightbox-thumbnail.jpeg"
                   loading="lazy"
