@@ -75,10 +75,7 @@ export default function Home({ props }) {
               {/* this code block map through all the links */}
               {Object.keys(navLinks).map((item) =>
                 navLinks[item].sublinks ? (
-                  <div
-                    className="dropdown"
-                    key={navLinks[item].id}
-                  >
+                  <div className="dropdown" key={navLinks[item].id}>
                     <a className="nav-link w-nav-link dropbtn">
                       {navLinks[item].name}
                     </a>
@@ -151,14 +148,14 @@ export default function Home({ props }) {
                 rel="noreferrer"
               >
                 <div className="lightbox-icon">
-                    <Image
-                      src="/images/common/icon-play.svg"
-                      alt=""
-                      height={150}
-                      width={150}
-                      className="lightbox-icon"
-                    />
-                  </div>
+                  <Image
+                    src="/images/common/icon-play.svg"
+                    alt=""
+                    height={150}
+                    width={150}
+                    className="lightbox-icon"
+                  />
+                </div>
                 <Image
                   src="/images/hero-section/hero-section-lightbox-thumbnail.jpeg"
                   loading="lazy"
@@ -190,103 +187,121 @@ export default function Home({ props }) {
       <div className="home-features-section" id="home-section">
         <div className="home-features-wrapper">
           <div id="Features" className="w-layout-grid home-features-grid">
-            <div className="home-features-block">
-              <div className="home-features-icon-wrapper">
-                <div className="home-features-icon">
-                  <Image
-                    src="/images/home-section/auticare-logo.png"
-                    layout="fill"
-                    alt=""
-                  />
+            <a
+              href="https://www.myauticare.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <div className="home-features-block">
+                <div className="home-features-icon-wrapper">
+                  <div className="home-features-icon">
+                    <Image
+                      src="/images/home-section/auticare-logo.png"
+                      layout="fill"
+                      alt=""
+                    />
+                  </div>
+                  <div className="image">
+                    <Image
+                      src="/images/home-section/home-section-icon-hex-left.svg"
+                      height={150}
+                      width={150}
+                      alt=""
+                    />
+                  </div>
                 </div>
-                <div className="image">
-                  <Image
-                    src="/images/home-section/home-section-icon-hex-left.svg"
-                    height={150}
-                    width={150}
-                    alt=""
-                  />
-                </div>
+                <h3 className="home-features-title-text">Auticare</h3>
+                <div className="div-line"></div>
+                <p>
+                  XR-AI based Assistive Technology Learning platform for Autism
+                  Spectrum Disorder and Special Education.
+                </p>
               </div>
-              <h3 className="home-features-title-text">Auticare</h3>
-              <div className="div-line"></div>
-              <p>
-                XR-AI based Assistive Technology Learning platform for Autism
-                Spectrum Disorder and Special Education.
-              </p>
-            </div>
-            <div className="home-features-block">
-              <div className="home-features-icon-wrapper">
-                <div className="home-features-icon">
-                  <Image
-                    src="/images/home-section/mindcare-logo.png"
-                    layout="fill"
-                    alt=""
-                  />
+            </a>
+            <a href="https://mindcare-xr.com/" target="_blank" rel="noreferrer">
+              <div className="home-features-block">
+                <div className="home-features-icon-wrapper">
+                  <div className="home-features-icon">
+                    <Image
+                      src="/images/home-section/mindcare-logo.png"
+                      layout="fill"
+                      alt=""
+                    />
+                  </div>
+                  <div className="image">
+                    <Image
+                      src="/images/home-section/home-section-icon-hex-right.svg"
+                      height={150}
+                      width={150}
+                      alt=""
+                    />
+                  </div>
                 </div>
-                <div className="image">
-                  <Image
-                    src="/images/home-section/home-section-icon-hex-right.svg"
-                    height={150}
-                    width={150}
-                    alt=""
-                  />
-                </div>
+
+                <h3 className="home-features-title-text">Mindcare XR</h3>
+                <div className="div-line"></div>
+                <p>
+                  XR unique platform to achieve optimal wellness through online
+                  therapy sessions
+                </p>
               </div>
-              <h3 className="home-features-title-text">Mindcare XR</h3>
-              <div className="div-line"></div>
-              <p>
-                XR unique platform to achieve optimal wellness through online
-                therapy sessions
-              </p>
-            </div>
-            <div className="home-features-block">
-              <div className="home-features-icon-wrapper">
-                <div className="home-features-icon">
-                  <Image
-                    src="/images/home-section/eduoskus-logo.png"
-                    layout="fill"
-                    alt=""
-                  />
+            </a>
+            <a
+              href="https://www.eduoskus.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <div className="home-features-block">
+                <div className="home-features-icon-wrapper">
+                  <div className="home-features-icon">
+                    <Image
+                      src="/images/home-section/eduoskus-logo.png"
+                      layout="fill"
+                      alt=""
+                    />
+                  </div>
+                  <div className="image">
+                    <Image
+                      src="/images/home-section/home-section-icon-hex-left.svg"
+                      height={150}
+                      width={150}
+                      alt=""
+                    />
+                  </div>
                 </div>
-                <div className="image">
-                  <Image
-                    src="/images/home-section/home-section-icon-hex-left.svg"
-                    height={150}
-                    width={150}
-                    alt=""
-                  />
-                </div>
+
+                <h3 className="home-features-title-text">Eduoskus XR</h3>
+                <div className="div-line"></div>
+                <p>One stop platform for all teaching and learning solutions</p>
               </div>
-              <h3 className="home-features-title-text">Eduoskus XR</h3>
-              <div className="div-line"></div>
-              <p>One stop platform for all teaching and learning solutions</p>
-            </div>
-            <div className="home-features-block">
-              <div className="home-features-icon-wrapper">
-                <div className="home-features-icon">
-                  <Image
-                    src="/images/home-section/xr-event-logo.png"
-                    layout="fill"
-                    alt=""
-                  />
+            </a>
+            <a href="https://www.xr-event.com/" target="_blank" rel="noreferrer">
+              <div className="home-features-block">
+                <div className="home-features-icon-wrapper">
+                  <div className="home-features-icon">
+                    <Image
+                      src="/images/home-section/xr-event-logo.png"
+                      layout="fill"
+                      alt=""
+                    />
+                  </div>
+                  <div className="image">
+                    <Image
+                      src="/images/home-section/home-section-icon-hex-right.svg"
+                      height={150}
+                      width={150}
+                      alt=""
+                    />
+                  </div>
                 </div>
-                <div className="image">
-                  <Image
-                    src="/images/home-section/home-section-icon-hex-right.svg"
-                    height={150}
-                    width={150}
-                    alt=""
-                  />
-                </div>
+                <h3 className="home-features-title-text">XR Event</h3>
+                <div className="div-line"></div>
+                <p>
+                  A stunning user-friendly virtual event platform for events,
+                  trade shows, exhibitions etc
+                </p>
               </div>
-              <h3 className="home-features-title-text">XR Event</h3>
-              <div className="div-line"></div>
-              <p>
-                A stunning user-friendly virtual event platform for events,
-                trade shows, exhibitions etc
-              </p>
-            </div>
+            </a>
           </div>
         </div>
 
@@ -403,7 +418,6 @@ export default function Home({ props }) {
                     </div>
                   </a>
                 </div>
-                
               ))}
             </div>
           </div>

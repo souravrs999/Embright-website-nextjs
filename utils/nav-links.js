@@ -47,7 +47,19 @@ export const navLinks = {
     name: "Events",
     link: "/events",
     type: "normal",
-    sublinks: false,
+    sublinks: true,
+    dpLinks: {
+      News: {
+        id: "fbfe1bba-d8aa-11eb-b8bc-0242ac130003",
+        name: "News ›",
+        link: "/events/news",
+      },
+      Publications: {
+        id: "fbfe1eb2-d8aa-11eb-b8bc-0242ac130003",
+        name: "Publications ›",
+        link: "#",
+      },
+    },
   },
   Blogs: {
     id: "ea17fe2e-d0e5-11eb-b8bc-0242ac130003",

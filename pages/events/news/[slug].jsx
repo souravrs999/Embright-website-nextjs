@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { navLinks } from "../../utils/nav-links";
+import { navLinks } from "../../../utils/nav-links";
 import ReactMarkdown from "react-markdown";
 import Image from "next/image";
 

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { navLinks } from "../../utils/nav-links";
+import { navLinks } from "../../../utils/nav-links";
 import Image from "next/image";
 
 export default function Blogs({ eventList }) {
@@ -166,7 +166,7 @@ export default function Blogs({ eventList }) {
                   className="home-news-item w-dyn-item"
                   key={item.id}
                 >
-                  <Link href={`/events/${String(item.id)}`}>
+                  <Link href={`/events/news/${String(item.id)}`}>
                     <a className="home-news-item-link-block w-inline-block">
                       <div className="blog-item-image-wrapper">
                         <Image
