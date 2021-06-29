@@ -4,6 +4,7 @@ import Link from "next/link";
 import { navLinks } from "../../../utils/nav-links";
 import ReactMarkdown from "react-markdown";
 import Image from "next/image";
+import dateFormatter from "../../../lib/formatDate";
 
 export default function Blog({ eventData }) {
   const { pathname } = useRouter();
@@ -166,7 +167,9 @@ export default function Blog({ eventData }) {
               }}
               className="news-image"
             ></div>
-            <h6>{eventData.publishDate.split(":")[0].split("T")[0]}</h6>
+            <h6>
+              {dateFormatter(eventData.publishDate.split(":")[0].split("T")[0])}
+            </h6>
             <div className="w-richtext">
               <h3>{eventData.Title}</h3>
               <ReactMarkdown>{eventData.Body}</ReactMarkdown>

@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import { navLinks } from "../../../utils/nav-links";
 import Image from "next/image";
+import dateFormatter from '../../../lib/formatDate'
 
 export default function Blogs({ eventList }) {
   const { pathname } = useRouter();
@@ -177,7 +178,11 @@ export default function Blogs({ eventList }) {
                         />
                       </div>
                       <div className="blog-item-text-wrapper">
-                        <h6>{item.publishDate.split(":")[0].split("T")[0]}</h6>
+                        <h6>
+                          {dateFormatter(
+                            item.publishDate.split(":")[0].split("T")[0]
+                          )}
+                        </h6>
                         <h3 className="blog-item-title-text">{item.Title}</h3>
                         <div className="horizontal-line"></div>
                         <p className="blog-item-short-desciption-text">
