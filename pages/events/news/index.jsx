@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import { navLinks } from "../../../utils/nav-links";
 import Image from "next/image";
-import dateFormatter from '../../../lib/formatDate'
+import dateFormatter from "../../../lib/formatDate";
 
 export default function Blogs({ eventList }) {
   const { pathname } = useRouter();
@@ -84,11 +84,7 @@ export default function Blogs({ eventList }) {
                           target={
                             navLinks[item].dpLinks[subItem].ntab ? "_blank" : ""
                           }
-                          rel={
-                            navLinks[item].dpLinks[subItem].ntab
-                              ? "noreferrer"
-                              : ""
-                          }
+                          rel="noreferrer"
                         >
                           {navLinks[item].dpLinks[subItem].name}
                         </a>

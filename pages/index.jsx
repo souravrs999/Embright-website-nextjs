@@ -85,8 +85,10 @@ export default function Home({ props }) {
                         <a
                           href={navLinks[item].dpLinks[subItem].link}
                           key={navLinks[item].dpLinks[subItem].id}
-                          target={navLinks[item].dpLinks[subItem].ntab ? "_blank" : ""}
-                          rel={navLinks[item].dpLinks[subItem].ntab ? "noreferrer" : ""}
+                          target={
+                            navLinks[item].dpLinks[subItem].ntab ? "_blank" : ""
+                          }
+                          rel="noreferrer"
                         >
                           {navLinks[item].dpLinks[subItem].name}
                         </a>
@@ -277,7 +279,11 @@ export default function Home({ props }) {
                 <p>One stop platform for all teaching and learning solutions</p>
               </div>
             </a>
-            <a href="https://www.xr-event.com/" target="_blank" rel="noreferrer">
+            <a
+              href="https://www.xr-event.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <div className="home-features-block">
                 <div className="home-features-icon-wrapper">
                   <div className="home-features-icon">

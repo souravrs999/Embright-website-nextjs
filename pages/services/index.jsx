@@ -82,11 +82,7 @@ export default function Services() {
                           target={
                             navLinks[item].dpLinks[subItem].ntab ? "_blank" : ""
                           }
-                          rel={
-                            navLinks[item].dpLinks[subItem].ntab
-                              ? "noreferrer"
-                              : ""
-                          }
+                          rel="noreferrer"
                         >
                           {navLinks[item].dpLinks[subItem].name}
                         </a>
