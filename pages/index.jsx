@@ -313,11 +313,9 @@ export default function Home({ props }) {
           <div className="partners-grid-vertical-spacing-block"></div>
           {Object.keys(partnersList).map((logo) => (
             <div className="partners-block" key={partnersList[logo].name}>
-              <Image
+              <img
                 src={partnersList[logo].img}
                 alt={partnersList[logo].name}
-                width={100}
-                height={70}
                 className="partners-logo-image"
               />
             </div>
