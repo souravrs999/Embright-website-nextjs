@@ -18,20 +18,20 @@ export const navLinks = {
         name: "Auticare ›",
         link: "https://www.myauticare.com/",
       },
+      MindcareXR: {
+        id: "71e5b532-d3e1-11eb-b8bc-0242ac130003",
+        name: "Mindcare XR ›",
+        link: "https://mindcare-xr.com/",
+      },
       Eduoskus: {
         id: "ea17f92e-d0e5-11eb-b8bc-0242ac130003",
-        name: "Eduoskus ›",
+        name: "Eduoskus XR›",
         link: "https://www.eduoskus.com/",
       },
       XREvent: {
         id: "ea17fbe0-d0e5-11eb-b8bc-0242ac130003",
         name: "XR Event ›",
         link: "http://www.xr-event.com/",
-      },
-      MindcareXR: {
-        id: "71e5b532-d3e1-11eb-b8bc-0242ac130003",
-        name: "Mindcare XR ›",
-        link: "https://mindcare-xr.com/",
       },
     },
   },

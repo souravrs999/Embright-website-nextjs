@@ -123,7 +123,7 @@ export default function Blog({ blogData }) {
             loop=""
             style={{
               backgroundImage:
-                "url(/images/services-section/services-section-cover.jpeg)",
+                "url(/images/blogs-section/blog-section-cover.webp)",
             }}
             muted=""
             data-wf-ignore="true"

@@ -194,7 +194,7 @@ export default function Home({ props }) {
               <div className="home-features-icon-wrapper">
                 <div className="home-features-icon">
                   <Image
-                    src="/images/home-section/home-section-vr-thumb.svg"
+                    src="/images/home-section/auticare-logo.png"
                     layout="fill"
                     alt=""
                   />
@@ -219,7 +219,7 @@ export default function Home({ props }) {
               <div className="home-features-icon-wrapper">
                 <div className="home-features-icon">
                   <Image
-                    src="/images/home-section/home-section-crypto-thumb.svg"
+                    src="/images/home-section/mindcare-logo.png"
                     layout="fill"
                     alt=""
                   />
@@ -244,7 +244,7 @@ export default function Home({ props }) {
               <div className="home-features-icon-wrapper">
                 <div className="home-features-icon">
                   <Image
-                    src="/images/home-section/home-section-ai-thumb.svg"
+                    src="/images/home-section/eduoskus-logo.png"
                     layout="fill"
                     alt=""
                   />
@@ -266,7 +266,7 @@ export default function Home({ props }) {
               <div className="home-features-icon-wrapper">
                 <div className="home-features-icon">
                   <Image
-                    src="/images/home-section/home-section-cpu-thumb.svg"
+                    src="/images/home-section/xr-event-logo.png"
                     layout="fill"
                     alt=""
                   />
@@ -338,7 +338,7 @@ export default function Home({ props }) {
             <h6>About Us</h6>
             <h2>
               Embright
-              <span className="text-color">Infotech</span>
+              <span className="text-color"> Infotech</span>
             </h2>
             <div className="div-line"></div>
             <p>
@@ -528,7 +528,6 @@ export default function Home({ props }) {
             </div>
           </div>
         </div>
-        <div className="vertical-line-bottom"></div>
       </div>
     </>
   );
