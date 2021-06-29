@@ -167,6 +167,7 @@ export default function Blog({ blogData }) {
               className="news-image"
             ></div>
             <div className="w-richtext">
+              <h6>{blogData.publishDate}</h6>
               <h3>{blogData.Title}</h3>
               <ReactMarkdown>{blogData.Body}</ReactMarkdown>
             </div>

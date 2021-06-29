@@ -177,12 +177,13 @@ export default function Blogs({ blogList }) {
                         />
                       </div>
                       <div className="blog-item-text-wrapper">
-                        <h6>{item.PublishDate}</h6>
+                        <h6>{item.publishDate}</h6>
                         <h3 className="blog-item-title-text">{item.Title}</h3>
                         <div className="horizontal-line"></div>
                         <p className="blog-item-short-desciption-text">
                           {`${item.Body.slice(0, 100)}...`}
                         </p>
+                        <h6>Read More...</h6>
                       </div>
                     </a>
                   </Link>

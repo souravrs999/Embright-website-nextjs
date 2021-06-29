@@ -166,6 +166,7 @@ export default function Blog({ eventData }) {
               }}
               className="news-image"
             ></div>
+            <h6>{eventData.publishDate.split(":")[0].split("T")[0]}</h6>
             <div className="w-richtext">
               <h3>{eventData.Title}</h3>
               <ReactMarkdown>{eventData.Body}</ReactMarkdown>
