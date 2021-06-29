@@ -85,6 +85,8 @@ export default function Home({ props }) {
                         <a
                           href={navLinks[item].dpLinks[subItem].link}
                           key={navLinks[item].dpLinks[subItem].id}
+                          target={navLinks[item].dpLinks[subItem].ntab ? "_blank" : ""}
+                          rel={navLinks[item].dpLinks[subItem].ntab ? "noreferrer" : ""}
                         >
                           {navLinks[item].dpLinks[subItem].name}
                         </a>
