@@ -7,11 +7,9 @@ import { partnersList } from "../utils/partners-list";
 import { mentorsList } from "../utils/mentors-list";
 import { testimonialItems } from "../utils/testimonial-items";
 import Image from "next/image";
-// import FsLightbox from 'fslightbox-react'
 
 export default function Home({ props }) {
   const { pathname } = useRouter();
-  // const [toggler, setToggler] = useState(false)
 
   useEffect(() => {
     document
@@ -37,7 +35,7 @@ export default function Home({ props }) {
         >
           <div className="nav-wrapper">
             <a
-              href="index.html"
+              href="#"
               aria-current="page"
               className="brand w-nav-brand w--current"
             >
@@ -147,7 +145,7 @@ export default function Home({ props }) {
             <div className="lightbox-wrapper">
               <a
                 className="lightbox-gallery w-inline-block w-lightbox"
-                href="https://www.youtube.com/embed/zPv3Zh2qh9E?autoplay=1"
+                href="https://youtu.be/zPv3Zh2qh9E"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -181,7 +179,11 @@ export default function Home({ props }) {
         </div>
         <div className="background-video w-background-video w-background-video-atom">
           <video autoPlay>
-            <source src="/video/hero-section-poster-video-1.mp4" />
+            <source
+              src="/video/hero-section-poster-video-1.mp4"
+              type="video/mp4"
+            />
+            Your browser do not support video tag.
           </video>
         </div>
       </div>
