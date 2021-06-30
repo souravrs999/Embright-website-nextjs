@@ -2,10 +2,11 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { navLinks } from "../../../utils/nav-links";
+import ReactMarkdown from "react-markdown";
 import Image from "next/image";
 import dateFormatter from "../../../lib/formatDate";
 
-export default function Blogs({ eventList }) {
+export default function Blog({ eventData }) {
   const { pathname } = useRouter();
 
   useEffect(() => {
@@ -153,7 +154,7 @@ export default function Blogs({ eventList }) {
         >
           <div className="hero-grid-column-1">
             <h1 className="hero-title-text">
-              <span className="text-color">News</span>
+              <span className="text-color">Publications</span>
             </h1>
             <div className="div-line"></div>
           </div>
@@ -163,41 +164,19 @@ export default function Blogs({ eventList }) {
       {/* Blogs section */}
       <div className="aux-section">
         <div className="aux-block top-margin-negative">
-          <div className="home-news-list-wrapper w-dyn-list">
-            <div role="list" className="home-news-list w-dyn-items">
-              {eventList.map((item) => (
-                <div
-                  role="listitem"
-                  className="home-news-item w-dyn-item"
-                  key={item.id}
-                >
-                  <Link href={`/events/news/${String(item.id)}`}>
-                    <a className="home-news-item-link-block w-inline-block">
-                      <div className="blog-item-image-wrapper">
-                        <Image
-                          src={item.coverImage.url}
-                          layout="fill"
-                          className="blog-item-image"
-                          alt=""
-                        />
-                      </div>
-                      <div className="blog-item-text-wrapper">
-                        <h6>
-                          {dateFormatter(
-                            item.publishDate.split(":")[0].split("T")[0]
-                          )}
-                        </h6>
-                        <h3 className="blog-item-title-text">{item.Title}</h3>
-                        <div className="horizontal-line"></div>
-                        <p className="blog-item-short-desciption-text">
-                          {`${item.Body.slice(0, 100)}...`}
-                        </p>
-                        <h6>Read More...</h6>
-                      </div>
-                    </a>
-                  </Link>
-                </div>
-              ))}
+          <div className="outline-block padding-bottom-1-2x w-clearfix">
+            <div
+              style={{
+                backgroundImage: `url(${eventData.coverImage.url})`,
+              }}
+              className="news-image"
+            ></div>
+            {/* <h6>
+              {dateFormatter(eventData.publishDate.split(":")[0].split("T")[0])}
+            </h6> */}
+            <div className="w-richtext">
+              <h3>{eventData.Title}</h3>
+              {/* <ReactMarkdown>{eventData.Body}</ReactMarkdown> */}
             </div>
           </div>
         </div>
@@ -206,14 +185,30 @@ export default function Blogs({ eventList }) {
   );
 }
 
-export const getStaticProps = async () => {
-  const data = await fetch(`${process.env.STRAPI_URL}/embright-events`);
-  const eventList = await data.json();
+export async function getStaticPaths() {
+  const res = await fetch(`${process.env.STRAPI_URL}/embright-publications`);
+  const blogList = await res.json();
+
+  return {
+    paths: blogList.map((item) => ({
+      params: {
+        slug: String(item.id),
+      },
+    })),
+    fallback: false,
+  };
+}
+
+export async function getStaticProps({ params }) {
+  const data = await fetch(
+    `${process.env.STRAPI_URL}/embright-publications?id=${params.slug}`
+  );
+  const eventData = await data.json();
 
   return {
     props: {
-      eventList,
+      eventData: eventData[0],
     },
     revalidate: 60,
   };
-};
+}

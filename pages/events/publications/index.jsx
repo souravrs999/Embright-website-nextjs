@@ -153,7 +153,7 @@ export default function Blogs({ eventList }) {
         >
           <div className="hero-grid-column-1">
             <h1 className="hero-title-text">
-              <span className="text-color">News</span>
+              <span className="text-color">Publications</span>
             </h1>
             <div className="div-line"></div>
           </div>
@@ -171,7 +171,7 @@ export default function Blogs({ eventList }) {
                   className="home-news-item w-dyn-item"
                   key={item.id}
                 >
-                  <Link href={`/events/news/${String(item.id)}`}>
+                  <Link href={`/events/publications/${String(item.id)}`}>
                     <a className="home-news-item-link-block w-inline-block">
                       <div className="blog-item-image-wrapper">
                         <Image
@@ -182,17 +182,17 @@ export default function Blogs({ eventList }) {
                         />
                       </div>
                       <div className="blog-item-text-wrapper">
-                        <h6>
+                        {/* <h6>
                           {dateFormatter(
                             item.publishDate.split(":")[0].split("T")[0]
                           )}
-                        </h6>
+                        </h6> */}
                         <h3 className="blog-item-title-text">{item.Title}</h3>
                         <div className="horizontal-line"></div>
-                        <p className="blog-item-short-desciption-text">
+                        {/* <p className="blog-item-short-desciption-text">
                           {`${item.Body.slice(0, 100)}...`}
-                        </p>
-                        <h6>Read More...</h6>
+                        </p> */}
+                        {/* <h6>Read More...</h6> */}
                       </div>
                     </a>
                   </Link>
@@ -207,7 +207,7 @@ export default function Blogs({ eventList }) {
 }
 
 export const getStaticProps = async () => {
-  const data = await fetch(`${process.env.STRAPI_URL}/embright-events`);
+  const data = await fetch(`${process.env.STRAPI_URL}/embright-publications`);
   const eventList = await data.json();
 
   return {
@@ -217,3 +217,4 @@ export const getStaticProps = async () => {
     revalidate: 60,
   };
 };
+

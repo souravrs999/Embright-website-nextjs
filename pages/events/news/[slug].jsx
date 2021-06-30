@@ -154,7 +154,7 @@ export default function Blog({ eventData }) {
         >
           <div className="hero-grid-column-1">
             <h1 className="hero-title-text">
-              <span className="text-color">Events</span>
+              <span className="text-color">News</span>
             </h1>
             <div className="div-line"></div>
           </div>

@@ -61,7 +61,7 @@ export const navLinks = {
       Publications: {
         id: "fbfe1eb2-d8aa-11eb-b8bc-0242ac130003",
         name: "Publications ›",
-        link: "#",
+        link: "/events/publications",
       },
     },
   },
