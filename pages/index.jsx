@@ -159,7 +159,7 @@ export default function Home({ props }) {
                   />
                 </div>
                 <Image
-                  src="/images/services-section/healthcare.jpg"
+                  src="/images/hero-section/hero-section-lightbox-thumbnail.jpeg"
                   loading="lazy"
                   height={300}
                   width={300}
