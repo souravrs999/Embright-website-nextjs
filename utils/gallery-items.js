@@ -25,7 +25,7 @@ export const galleryItems = {
   },
   6: {
     id: "ea1822d2-d0e5-11eb-b8bc-0242ac130003",
-    img: "/images/gallery-section/GEM-PORTAL.jpg",
+    img: "/images/gallery-section/birac-thumb.png",
   },
   7: {
     id: "ea182390-d0e5-11eb-b8bc-0242ac130003",

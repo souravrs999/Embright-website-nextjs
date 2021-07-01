@@ -24,8 +24,8 @@ export const partnersList = {
     img: "/images/partner-section/logo INSAR.png",
   },
   6: {
-    name: "Indiamart",
-    img: "/images/partner-section/Indiamart-new.png",
+    name: "GEM Portal",
+    img: "/images/partner-section/GEM-PORTAL.jpg",
   },
   7: {
     name: "Kerala Social Security Mission",
