@@ -554,47 +554,133 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Blogs section */}
-      <div className="aux-section">
+      {/* <!-- Team Section --> */}
+      <div className="trainers-section">
         <div className="vertical-line-top"></div>
         <div className="dark-section-text-wrapper">
-          <h6>ISO Certificates</h6>
+          <h6>Certifications</h6>
+          {/* <h2 className="dark-section-title-text">
+          The guys at work behind the sceces
+        </h2> */}
           <div className="div-line"></div>
         </div>
-
-        <div className="home-news-list-wrapper w-dyn-list">
-          <div role="list" className="home-news-list w-dyn-items">
-            {Object.keys(certificates).map((item) => (
-              <div
-                role="listitem"
-                className="home-news-item w-dyn-item"
-                key={certificates[item].id}
-              >
-                <Link
-                  href={`/events/publications/${String(certificates[item].id)}`}
+        <div className="aux-block">
+          <div className="home-trainers-list-wrapper w-dyn-list">
+            <div role="list" className="trainers-list w-dyn-items">
+              {/* item */}
+                <div
+                  role="listitem"
+                  className="trainers-item w-dyn-item"
                 >
-                  <a className="home-news-item-link-block w-inline-block">
-                    <div className="blog-item-image-wrapper">
+                  <a className="trainers-item-link-block w-inline-block">
+                    <div className="trainers-image-wrapper-tilt-left">
+                      <div className="trainers-image-wrapper">
+                        <Image
+                          src="/images/certificates/cert-13485.png"
+                          alt=""
+                          height={100}
+                          width={100}
+                          className="trainers-image"
+                        />
+                      </div>
                       <Image
-                        src={certificates[item].img}
-                        layout="fill"
-                        className="blog-item-image"
+                        src="/images/team-section/team-section-icon-hex-left.svg"
+                        height={200}
+                        width={200}
                         alt=""
                       />
                     </div>
-                    <div className="blog-item-text-wrapper">
-                      <h3 className="blog-item-title-text">
-                        {certificates[item].name}
-                      </h3>
-                      <div className="horizontal-line"></div>
-                    </div>
+                    {/* <div
+                      className="
+                    trainers-image-wrapper-tilt-right
+                    w-condition-invisible
+                  "
+                    ></div> */}
+                    {/* <h3>{mentorsList[mentor].name}</h3>
+
+                    <div className="div-line"></div>
+                    <h6 className="ps-50">{mentorsList[mentor].desc}</h6> */}
                   </a>
-                </Link>
-              </div>
-            ))}
+                </div>
+                {/* /item */}
+                {/* item */}
+                <div
+                  role="listitem"
+                  className="trainers-item w-dyn-item"
+                >
+                  <a className="trainers-item-link-block w-inline-block">
+                    <div className="trainers-image-wrapper-tilt-left">
+                      <div className="trainers-image-wrapper">
+                        <Image
+                          src="/images/certificates/cert-9000.jpg"
+                          alt=""
+                          height={100}
+                          width={100}
+                          className="trainers-image"
+                        />
+                      </div>
+                      <Image
+                        src="/images/team-section/team-section-icon-hex-right.svg"
+                        height={200}
+                        width={200}
+                        alt=""
+                      />
+                    </div>
+                    {/* <div
+                      className="
+                    trainers-image-wrapper-tilt-right
+                    w-condition-invisible
+                  "
+                    ></div> */}
+                    {/* <h3>{mentorsList[mentor].name}</h3>
+
+                    <div className="div-line"></div>
+                    <h6 className="ps-50">{mentorsList[mentor].desc}</h6> */}
+                  </a>
+                </div>
+                {/* /item */}
+                {/* item */}
+                <div
+                  role="listitem"
+                  className="trainers-item w-dyn-item"
+                >
+                  <a className="trainers-item-link-block w-inline-block">
+                    <div className="trainers-image-wrapper-tilt-left">
+                      <div className="trainers-image-wrapper">
+                        <Image
+                          src="/images/certificates/cert-2001.png"
+                          alt=""
+                          height={100}
+                          width={100}
+                          className="trainers-image"
+                        />
+                      </div>
+                      <Image
+                        src="/images/team-section/team-section-icon-hex-left.svg"
+                        height={200}
+                        width={200}
+                        alt=""
+                      />
+                    </div>
+                    {/* <div
+                      className="
+                    trainers-image-wrapper-tilt-right
+                    w-condition-invisible
+                  "
+                    ></div> */}
+                    {/* <h3>{mentorsList[mentor].name}</h3>
+
+                    <div className="div-line"></div>
+                    <h6 className="ps-50">{mentorsList[mentor].desc}</h6> */}
+                  </a>
+                </div>
+                {/* /item */}
+            </div>
           </div>
         </div>
       </div>
+
+
     </>
   );
 }
