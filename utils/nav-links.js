@@ -22,7 +22,7 @@ export const navLinks = {
       MindcareXR: {
         id: "71e5b532-d3e1-11eb-b8bc-0242ac130003",
         name: "Mindcare XR ›",
-        link: "https://mindcare-xr.com/",
+        link: "https://mindcarexr.com/",
         ntab: true,
       },
       Eduoskus: {
@@ -34,7 +34,7 @@ export const navLinks = {
       XREvent: {
         id: "ea17fbe0-d0e5-11eb-b8bc-0242ac130003",
         name: "XR Event ›",
-        link: "http://www.xr-event.com/",
+        link: "https://www.xr-event.com/",
         ntab: true,
       },
     },
@@ -44,7 +44,20 @@ export const navLinks = {
     name: "Services",
     link: "/services",
     type: "normal",
-    sublinks: false,
+    sublinks: true,
+    dpLinks: {
+      vrLabs: {
+        id: "3ad491e6-daec-11eb-8d19-0242ac130003",
+        name: "Embright Labs",
+        link: "https://embrightlabs.com/",
+        ntab: true,
+      },
+      xrServices: {
+        id: "3ad4945c-daec-11eb-8d19-0242ac130003",
+        name: "XR Services ›",
+        link: "/services/xr-services",
+      },
+    },
   },
   Events: {
     id: "ea17fd70-d0e5-11eb-b8bc-0242ac130003",
