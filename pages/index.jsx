@@ -6,9 +6,10 @@ import { galleryItems } from "../utils/gallery-items";
 import { partnersList } from "../utils/partners-list";
 import { mentorsList } from "../utils/mentors-list";
 import { testimonialItems } from "../utils/testimonial-items";
+import { certificates } from "../utils/certificates";
 import Image from "next/image";
 
-export default function Home({ props }) {
+export default function Home() {
   const { pathname } = useRouter();
 
   useEffect(() => {
@@ -23,6 +24,7 @@ export default function Home({ props }) {
         }
       });
   }, []);
+
   return (
     <>
       <div className="home-hero-section">
@@ -224,7 +226,7 @@ export default function Home({ props }) {
                 </p>
               </div>
             </a>
-            <a href="https://mindcare-xr.com/" target="_blank" rel="noreferrer">
+            <a href="https://mindcarexr.com/" target="_blank" rel="noreferrer">
               <div className="home-features-block">
                 <div className="home-features-icon-wrapper">
                   <div className="home-features-icon">
@@ -548,6 +550,48 @@ export default function Home({ props }) {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Blogs section */}
+      <div className="aux-section">
+        <div className="vertical-line-top"></div>
+        <div className="dark-section-text-wrapper">
+          <h6>ISO Certificates</h6>
+          <div className="div-line"></div>
+        </div>
+
+        <div className="home-news-list-wrapper w-dyn-list">
+          <div role="list" className="home-news-list w-dyn-items">
+            {Object.keys(certificates).map((item) => (
+              <div
+                role="listitem"
+                className="home-news-item w-dyn-item"
+                key={certificates[item].id}
+              >
+                <Link
+                  href={`/events/publications/${String(certificates[item].id)}`}
+                >
+                  <a className="home-news-item-link-block w-inline-block">
+                    <div className="blog-item-image-wrapper">
+                      <Image
+                        src={certificates[item].img}
+                        layout="fill"
+                        className="blog-item-image"
+                        alt=""
+                      />
+                    </div>
+                    <div className="blog-item-text-wrapper">
+                      <h3 className="blog-item-title-text">
+                        {certificates[item].name}
+                      </h3>
+                      <div className="horizontal-line"></div>
+                    </div>
+                  </a>
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
       </div>
