@@ -8159,7 +8159,7 @@ blockquote {
 /* custom drop down menu */
 .dropdown {
   position: relative;
-  display: inline-block;
+  display: block;
 }
 
 .dropdown-content {
