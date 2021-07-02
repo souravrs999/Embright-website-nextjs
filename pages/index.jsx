@@ -180,7 +180,7 @@ export default function Home() {
           </div>
         </div>
         <div className="background-video w-background-video w-background-video-atom">
-          <video autoPlay>
+          <video autoPlay loop>
             <source
               src="/video/hero-section-poster-video-1.mp4"
               type="video/mp4"
