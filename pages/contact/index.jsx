@@ -277,7 +277,7 @@ export default function Services() {
                     }}
                     value={subj}
                   />
-                  <label for="service">
+                  <label htmlFor="service">
                     <p>Select your required service:</p>
                   </label>
                   <select
