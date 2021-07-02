@@ -12,8 +12,6 @@ export default function Services() {
   const [phone, setPhone] = useState("");
   const [subj, setSubj] = useState("");
   const [msg, setMsg] = useState("");
-  const [service, setService] = useState("");
-
   const [submitted, setSubmitted] = useState(false);
 
   function clearFields() {
@@ -26,22 +24,22 @@ export default function Services() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(service)
+    // console.log(service)
 
-    // let data = { name, email, phone, subj, msg };
-    // fetch("api/contact/contact", {
-    //   method: "POST",
-    //   headers: {
-    //     Accept: "application/json, text/plain, */*",
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(data),
-    // }).then((res) => {
-    //   if (res.status === 200) {
-    //     setSubmitted(true);
-    //     clearFields();
-    //   }
-    // });
+    let data = { name, email, phone, subj, msg };
+    fetch("api/contact/contact", {
+      method: "POST",
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    }).then((res) => {
+      if (res.status === 200) {
+        setSubmitted(true);
+        clearFields();
+      }
+    });
   }
 
   useEffect(() => {
@@ -277,7 +275,7 @@ export default function Services() {
                     }}
                     value={subj}
                   />
-                  <label htmlFor="service">
+                  {/* <label htmlFor="service">
                     <p>Select your required service:</p>
                   </label>
                   <select
@@ -291,7 +289,7 @@ export default function Services() {
                     <option value="auticare1">Auticare1</option>
                     <option value="auticare2">Auticare2</option>
                     <option value="auticare3">Auticare3</option>
-                  </select>
+                  </select> */}
                   <textarea
                     id="Contact-Message"
                     name="Message"
