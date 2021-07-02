@@ -171,7 +171,7 @@ export default function Blogs({ eventList }) {
                   className="home-news-item w-dyn-item"
                   key={item.id}
                 >
-                  <Link href={`/events/publications/${String(item.id)}`}>
+                  <Link href={item.extLink}>
                     <a className="home-news-item-link-block w-inline-block">
                       <div className="blog-item-image-wrapper">
                         <Image
