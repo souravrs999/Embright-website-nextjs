@@ -1,7 +1,7 @@
 import { socialLinks } from "../utils/social-links";
 import { navLinks } from "../utils/nav-links";
 import Link from "next/link";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default function FooterComponent() {
   return (
     <>
@@ -32,7 +32,10 @@ export default function FooterComponent() {
                   rel="noreferrer"
                   key={socialLinks[sm].id}
                 >
-                  {socialLinks[sm].name}
+                  <FontAwesomeIcon
+                    className="social"
+                    icon={socialLinks[sm].icon}
+                  />
                 </a>
               ))}
             </div>

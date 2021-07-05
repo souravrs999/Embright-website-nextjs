@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import { navLinks } from "../../utils/nav-links";
-import { serviceItems } from "../../utils/service-items";
+import { navLinks } from "../../../utils/nav-links";
+import { serviceItems } from "../../../utils/service-items";
 import Link from "next/link";
 import Image from "next/image";
 

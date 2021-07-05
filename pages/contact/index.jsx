@@ -12,7 +12,6 @@ export default function Services() {
   const [phone, setPhone] = useState("");
   const [subj, setSubj] = useState("");
   const [msg, setMsg] = useState("");
-
   const [submitted, setSubmitted] = useState(false);
 
   function clearFields() {
@@ -25,6 +24,7 @@ export default function Services() {
 
   function handleSubmit(e) {
     e.preventDefault();
+    // console.log(service)
 
     let data = { name, email, phone, subj, msg };
     fetch("api/contact/contact", {
@@ -275,6 +275,21 @@ export default function Services() {
                     }}
                     value={subj}
                   />
+                  {/* <label htmlFor="service">
+                    <p>Select your required service:</p>
+                  </label>
+                  <select
+                    name="service"
+                    className="form-text-field w-input"
+                    onChange={(e) => {
+                      setService(e.target.value);
+                    }}
+                  >
+                    <option value="auticare">Auticare</option>
+                    <option value="auticare1">Auticare1</option>
+                    <option value="auticare2">Auticare2</option>
+                    <option value="auticare3">Auticare3</option>
+                  </select> */}
                   <textarea
                     id="Contact-Message"
                     name="Message"
