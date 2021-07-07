@@ -8,6 +8,7 @@ import { mentorsList } from "../utils/mentors-list";
 import { testimonialItems } from "../utils/testimonial-items";
 import { certificates } from "../utils/certificates";
 import Image from "next/image";
+import Head from "next/head";
 
 export default function Home() {
   const { pathname } = useRouter();
@@ -27,6 +28,27 @@ export default function Home() {
 
   return (
     <>
+      <Head>
+        <title>Embright Infotech - Home</title>
+        <meta
+          content="Embright Infotech - Virtual Reality. Augmented Reality. Mixed Reality. AI. Assistive Technology. IoT"
+          name="description"
+        />
+        <meta content="Embright Infotech - Home" name="og:title" />
+        <meta
+          content="Embright Infotech - Virtual Reality. Augmented Reality. Mixed Reality. AI. Assistive Technology. IoT."
+          name="og:description"
+        />
+        <meta content="Embright Infotech - Home" name="twitter:title" />
+        <meta
+          content="Embright Infotech - Virtual Reality. Augmented Reality. Mixed Reality. AI. Assistive Technology. IoT."
+          name="twitter:description"
+        />
+        <meta name="og:type" content="website" />
+        <meta content="summary_large_image" name="twitter:card" />
+      </Head>
+
+
       <div className="home-hero-section">
         <div
           data-collapse="medium"
@@ -568,119 +590,108 @@ export default function Home() {
           <div className="home-trainers-list-wrapper w-dyn-list">
             <div role="list" className="trainers-list w-dyn-items">
               {/* item */}
-                <div
-                  role="listitem"
-                  className="trainers-item w-dyn-item"
-                >
-                  <a className="trainers-item-link-block w-inline-block">
-                    <div className="trainers-image-wrapper-tilt-left">
-                      <div className="trainers-image-wrapper">
-                        <Image
-                          src="/images/certificates/cert-13485.png"
-                          alt=""
-                          height={100}
-                          width={100}
-                          className="trainers-image"
-                        />
-                      </div>
+              <div role="listitem" className="trainers-item w-dyn-item">
+                <a className="trainers-item-link-block w-inline-block">
+                  <div className="trainers-image-wrapper-tilt-left">
+                    <div className="trainers-image-wrapper">
                       <Image
-                        src="/images/team-section/team-section-icon-hex-left.svg"
-                        height={200}
-                        width={200}
+                        src="/images/certificates/cert-13485.png"
                         alt=""
+                        height={100}
+                        width={100}
+                        className="trainers-image"
                       />
                     </div>
-                    {/* <div
+                    <Image
+                      src="/images/team-section/team-section-icon-hex-left.svg"
+                      height={200}
+                      width={200}
+                      alt=""
+                    />
+                  </div>
+                  {/* <div
                       className="
                     trainers-image-wrapper-tilt-right
                     w-condition-invisible
                   "
                     ></div> */}
-                    {/* <h3>{mentorsList[mentor].name}</h3>
+                  {/* <h3>{mentorsList[mentor].name}</h3>
 
                     <div className="div-line"></div>
                     <h6 className="ps-50">{mentorsList[mentor].desc}</h6> */}
-                  </a>
-                </div>
-                {/* /item */}
-                {/* item */}
-                <div
-                  role="listitem"
-                  className="trainers-item w-dyn-item"
-                >
-                  <a className="trainers-item-link-block w-inline-block">
-                    <div className="trainers-image-wrapper-tilt-left">
-                      <div className="trainers-image-wrapper">
-                        <Image
-                          src="/images/certificates/cert-9000.jpg"
-                          alt=""
-                          height={100}
-                          width={100}
-                          className="trainers-image"
-                        />
-                      </div>
+                </a>
+              </div>
+              {/* /item */}
+              {/* item */}
+              <div role="listitem" className="trainers-item w-dyn-item">
+                <a className="trainers-item-link-block w-inline-block">
+                  <div className="trainers-image-wrapper-tilt-left">
+                    <div className="trainers-image-wrapper">
                       <Image
-                        src="/images/team-section/team-section-icon-hex-right.svg"
-                        height={200}
-                        width={200}
+                        src="/images/certificates/cert-9000.jpg"
                         alt=""
+                        height={100}
+                        width={100}
+                        className="trainers-image"
                       />
                     </div>
-                    {/* <div
+                    <Image
+                      src="/images/team-section/team-section-icon-hex-right.svg"
+                      height={200}
+                      width={200}
+                      alt=""
+                    />
+                  </div>
+                  {/* <div
                       className="
                     trainers-image-wrapper-tilt-right
                     w-condition-invisible
                   "
                     ></div> */}
-                    {/* <h3>{mentorsList[mentor].name}</h3>
+                  {/* <h3>{mentorsList[mentor].name}</h3>
 
                     <div className="div-line"></div>
                     <h6 className="ps-50">{mentorsList[mentor].desc}</h6> */}
-                  </a>
-                </div>
-                {/* /item */}
-                {/* item */}
-                <div
-                  role="listitem"
-                  className="trainers-item w-dyn-item"
-                >
-                  <a className="trainers-item-link-block w-inline-block">
-                    <div className="trainers-image-wrapper-tilt-left">
-                      <div className="trainers-image-wrapper">
-                        <Image
-                          src="/images/certificates/cert-2001.png"
-                          alt=""
-                          height={100}
-                          width={100}
-                          className="trainers-image"
-                        />
-                      </div>
+                </a>
+              </div>
+              {/* /item */}
+              {/* item */}
+              <div role="listitem" className="trainers-item w-dyn-item">
+                <a className="trainers-item-link-block w-inline-block">
+                  <div className="trainers-image-wrapper-tilt-left">
+                    <div className="trainers-image-wrapper">
                       <Image
-                        src="/images/team-section/team-section-icon-hex-left.svg"
-                        height={200}
-                        width={200}
+                        src="/images/certificates/cert-2001.png"
                         alt=""
+                        height={100}
+                        width={100}
+                        className="trainers-image"
                       />
                     </div>
-                    {/* <div
+                    <Image
+                      src="/images/team-section/team-section-icon-hex-left.svg"
+                      height={200}
+                      width={200}
+                      alt=""
+                    />
+                  </div>
+                  {/* <div
                       className="
                     trainers-image-wrapper-tilt-right
                     w-condition-invisible
                   "
                     ></div> */}
-                    {/* <h3>{mentorsList[mentor].name}</h3>
+                  {/* <h3>{mentorsList[mentor].name}</h3>
 
                     <div className="div-line"></div>
                     <h6 className="ps-50">{mentorsList[mentor].desc}</h6> */}
-                  </a>
-                </div>
-                {/* /item */}
+                </a>
+              </div>
+              {/* /item */}
             </div>
           </div>
         </div>
       </div>
-
-
     </>
   );
 }

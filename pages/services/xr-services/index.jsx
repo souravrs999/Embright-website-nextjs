@@ -4,6 +4,7 @@ import { navLinks } from "../../../utils/nav-links";
 import { serviceItems } from "../../../utils/service-items";
 import Link from "next/link";
 import Image from "next/image";
+import Head from "next/head";
 
 export default function Services() {
   const { pathname } = useRouter();
@@ -23,6 +24,26 @@ export default function Services() {
 
   return (
     <>
+      <Head>
+        <title>Embright Infotech - Services</title>
+        <meta
+          content="We are blending in the most modern techniques and fascinating possibilities of Virtual reality in healthcare, Education, Tourism etc.."
+          name="description"
+        />
+        <meta content="Embright Infotech - Services" name="og:title" />
+        <meta
+          content="We are blending in the most modern techniques and fascinating possibilities of Virtual reality in healthcare, Education, Tourism etc.."
+          name="og:description"
+        />
+        <meta content="Embright Infotech - Services" name="twitter:title" />
+        <meta
+          content="We are blending in the most modern techniques and fascinating possibilities of Virtual reality in healthcare, Education, Tourism etc.."
+          name="twitter:description"
+        />
+        <meta name="og:type" content="website" />
+        <meta content="summary_large_image" name="twitter:card" />
+      </Head>
+
       {/* <!-- Nav Section --> */}
       <div className="home-hero-section">
         <div
