@@ -3,7 +3,9 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import { navLinks } from "../../utils/nav-links";
 import Image from "next/image";
-import dateFormatter from '../../lib/formatDate'
+import dateFormatter from "../../lib/formatDate";
+import Head from "next/head";
+import { SEO } from "../../utils/seo";
 
 export default function Blogs({ blogList }) {
   const { pathname } = useRouter();
@@ -23,6 +25,18 @@ export default function Blogs({ blogList }) {
 
   return (
     <>
+      <Head>
+        <title>{SEO.blogs.title}</title>
+        <meta content={SEO.blogs.desc} name="description" />
+        <meta content={SEO.blogs.ogTitle} name="og:title" />
+        <meta name="og:url" content={SEO.blogs.ogUrl} />
+        <meta content={SEO.blogs.ogDesc} name="og:description" />
+        <meta content={SEO.blogs.twitTitle} name="twitter:title" />
+        <meta content={SEO.blogs.twitDesc} name="twitter:description" />
+        <meta name="og:type" content={SEO.blogs.ogType} />
+        <meta content={SEO.blogs.twitCard} name="twitter:card" />
+      </Head>
+
       {/* <!-- Nav Section --> */}
       <div className="home-hero-section">
         <div

@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { navLinks } from "../../utils/nav-links";
 import Link from "next/link";
 import Image from "next/image";
+import Head from 'next/head'
+import { SEO} from '../../utils/seo'
 
 export default function Services() {
   const { pathname } = useRouter();
@@ -57,6 +59,18 @@ export default function Services() {
 
   return (
     <>
+    <Head>
+        <title>{SEO.contact.title}</title>
+        <meta content={SEO.contact.desc} name="description" />
+        <meta content={SEO.contact.ogTitle} name="og:title" />
+        <meta name="og:url" content={SEO.contact.ogUrl} />
+        <meta content={SEO.contact.ogDesc} name="og:description" />
+        <meta content={SEO.contact.twitTitle} name="twitter:title" />
+        <meta content={SEO.contact.twitDesc} name="twitter:description" />
+        <meta name="og:type" content={SEO.contact.ogType} />
+        <meta content={SEO.contact.twitCard} name="twitter:card" />
+      </Head>
+      
       {/* <!-- Nav Section --> */}
       <div className="home-hero-section">
         <div
