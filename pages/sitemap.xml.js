@@ -10,28 +10,35 @@ const createSitemap = (
 ) => `<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-      <loc>https://www.embrightinfotech.com</loc>
+      <loc>https://www.embrightinfotech.com/</loc>
+      <priority>1.00</priority>
     </url>
     <url>
       <loc>https://www.embrightinfotech.com/services/xr-services</loc>
+      <priority>0.80</priority>
     </url>
     <url>
       <loc>https://www.embrightinfotech.com/events/news</loc>
+      <priority>0.80</priority>
     </url>
     <url>
       <loc>https://www.embrightinfotech.com/events/publications</loc>
+      <priority>0.80</priority>
     </url>
     <url>
       <loc>https://www.embrightinfotech.com/blogs</loc>
+      <priority>0.80</priority>
     </url>
     <url>
       <loc>https://www.embrightinfotech.com/contact</loc>
+      <priority>0.80</priority>
     </url>
         ${posts[0]
           .map(({ id }) => {
             return `
                     <url>
                         <loc>${`${MAIN_URL}/${subdomain[0]}/${id}`}</loc>
+                        <priority>0.64</priority>
                     </url>
                 `;
           })
@@ -41,6 +48,7 @@ const createSitemap = (
               return `
                       <url>
                           <loc>${`${MAIN_URL}/${subdomain[1]}/${id}`}</loc>
+                          <priority>0.64</priority>
                       </url>
                   `;
             })
