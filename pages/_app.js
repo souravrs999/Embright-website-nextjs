@@ -2,7 +2,6 @@ import "../styles/globals.css";
 import LayoutComponent from "../layout/Layout";
 import { useRouter } from "next/router";
 import {useEffect} from 'react'
-import Head from "next/head";
 import * as gtag from "../lib/gtag";
 
 export default function MyApp({ Component, pageProps }) {

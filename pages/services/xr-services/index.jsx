@@ -5,6 +5,7 @@ import { serviceItems } from "../../../utils/service-items";
 import Link from "next/link";
 import Image from "next/image";
 import Head from "next/head";
+import { SEO } from "../../../utils/seo";
 
 export default function Services() {
   const { pathname } = useRouter();
@@ -25,23 +26,15 @@ export default function Services() {
   return (
     <>
       <Head>
-        <title>Embright Infotech - Services</title>
-        <meta
-          content="We are blending in the most modern techniques and fascinating possibilities of Virtual reality in healthcare, Education, Tourism etc.."
-          name="description"
-        />
-        <meta content="Embright Infotech - Services" name="og:title" />
-        <meta
-          content="We are blending in the most modern techniques and fascinating possibilities of Virtual reality in healthcare, Education, Tourism etc.."
-          name="og:description"
-        />
-        <meta content="Embright Infotech - Services" name="twitter:title" />
-        <meta
-          content="We are blending in the most modern techniques and fascinating possibilities of Virtual reality in healthcare, Education, Tourism etc.."
-          name="twitter:description"
-        />
-        <meta name="og:type" content="website" />
-        <meta content="summary_large_image" name="twitter:card" />
+        <title>{SEO.services.title}</title>
+        <meta content={SEO.services.desc} name="description" />
+        <meta content={SEO.services.ogTitle} name="og:title" />
+        <meta name="og:url" content={SEO.services.ogUrl} />
+        <meta content={SEO.services.ogDesc} name="og:description" />
+        <meta content={SEO.services.twitTitle} name="twitter:title" />
+        <meta content={SEO.services.twitDesc} name="twitter:description" />
+        <meta name="og:type" content={SEO.services.ogType} />
+        <meta content={SEO.services.twitCard} name="twitter:card" />
       </Head>
 
       {/* <!-- Nav Section --> */}

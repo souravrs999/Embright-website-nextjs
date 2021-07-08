@@ -9,6 +9,7 @@ import { testimonialItems } from "../utils/testimonial-items";
 import { certificates } from "../utils/certificates";
 import Image from "next/image";
 import Head from "next/head";
+import { SEO } from "../utils/seo";
 
 export default function Home() {
   const { pathname } = useRouter();
@@ -29,25 +30,16 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Embright Infotech - Home</title>
-        <meta
-          content="Embright Infotech - Virtual Reality. Augmented Reality. Mixed Reality. AI. Assistive Technology. IoT"
-          name="description"
-        />
-        <meta content="Embright Infotech - Home" name="og:title" />
-        <meta
-          content="Embright Infotech - Virtual Reality. Augmented Reality. Mixed Reality. AI. Assistive Technology. IoT."
-          name="og:description"
-        />
-        <meta content="Embright Infotech - Home" name="twitter:title" />
-        <meta
-          content="Embright Infotech - Virtual Reality. Augmented Reality. Mixed Reality. AI. Assistive Technology. IoT."
-          name="twitter:description"
-        />
-        <meta name="og:type" content="website" />
-        <meta content="summary_large_image" name="twitter:card" />
+        <title>{SEO.home.title}</title>
+        <meta content={SEO.home.desc} name="description" />
+        <meta content={SEO.home.ogTitle} name="og:title" />
+        <meta name="og:url" content={SEO.home.ogUrl} />
+        <meta content={SEO.home.ogDesc} name="og:description" />
+        <meta content={SEO.home.twitTitle} name="twitter:title" />
+        <meta content={SEO.home.twitDesc} name="twitter:description" />
+        <meta name="og:type" content={SEO.home.ogType} />
+        <meta content={SEO.home.twitCard} name="twitter:card" />
       </Head>
-
 
       <div className="home-hero-section">
         <div
