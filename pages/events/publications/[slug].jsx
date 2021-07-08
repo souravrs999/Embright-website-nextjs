@@ -28,14 +28,14 @@ export default function Blog({ eventData }) {
     <>
       <Head>
         <title>{eventData.Title}</title>
-        <meta content={eventData.Body.slice(0, 150)} name="description" />
+        <meta content={eventData.Title} name="description" />
         <meta content={eventData.Title} name="og:title" />
         <meta content={eventData.coverImage.url} name="og:image" />
         <meta name="og:url" content={SEO.publications.ogUrl + "/" + eventData.id} />
-        <meta content={eventData.Body.slice(0, 150)} name="og:description" />
+        <meta content={eventData.Title} name="og:description" />
         <meta content={eventData.Title} name="twitter:title" />
         <meta
-          content={eventData.Body.slice(0, 150)}
+          content={eventData.Title}
           name="twitter:description"
         />
         <meta name="og:type" content={SEO.publications.ogType} />
