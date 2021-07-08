@@ -4,6 +4,8 @@ import Link from "next/link";
 import { navLinks } from "../../../utils/nav-links";
 import Image from "next/image";
 import dateFormatter from "../../../lib/formatDate";
+import Head from "next/head";
+import { SEO } from "../../../utils/seo";
 
 export default function Blogs({ eventList }) {
   const { pathname } = useRouter();
@@ -23,6 +25,18 @@ export default function Blogs({ eventList }) {
 
   return (
     <>
+      <Head>
+        <title>{SEO.publications.title}</title>
+        <meta content={SEO.publications.desc} name="description" />
+        <meta content={SEO.publications.ogTitle} name="og:title" />
+        <meta name="og:url" content={SEO.publications.ogUrl} />
+        <meta content={SEO.publications.ogDesc} name="og:description" />
+        <meta content={SEO.publications.twitTitle} name="twitter:title" />
+        <meta content={SEO.publications.twitDesc} name="twitter:description" />
+        <meta name="og:type" content={SEO.publications.ogType} />
+        <meta content={SEO.publications.twitCard} name="twitter:card" />
+      </Head>
+
       {/* <!-- Nav Section --> */}
       <div className="home-hero-section">
         <div
@@ -217,4 +231,3 @@ export const getStaticProps = async () => {
     revalidate: 60,
   };
 };
-

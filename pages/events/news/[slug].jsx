@@ -5,6 +5,8 @@ import { navLinks } from "../../../utils/nav-links";
 import ReactMarkdown from "react-markdown";
 import Image from "next/image";
 import dateFormatter from "../../../lib/formatDate";
+import Head from "next/head";
+import { SEO } from "../../../utils/seo";
 
 export default function Blog({ eventData }) {
   const { pathname } = useRouter();
@@ -24,6 +26,21 @@ export default function Blog({ eventData }) {
 
   return (
     <>
+      <Head>
+        <title>{eventData.Title}</title>
+        <meta content={eventData.Body.slice(0, 150)} name="description" />
+        <meta content={eventData.Title} name="og:title" />
+        <meta content={eventData.coverImage.url} name="og:image" />
+        <meta name="og:url" content={SEO.news.ogUrl + "/" + eventData.id} />
+        <meta content={eventData.Body.slice(0, 150)} name="og:description" />
+        <meta content={eventData.Title} name="twitter:title" />
+        <meta
+          content={eventData.Body.slice(0, 150)}
+          name="twitter:description"
+        />
+        <meta name="og:type" content={SEO.news.ogType} />
+        <meta content={SEO.news.twitCard} name="twitter:card" />
+      </Head>
       {/* <!-- Nav Section --> */}
       <div className="home-hero-section">
         <div
