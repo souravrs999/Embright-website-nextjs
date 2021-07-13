@@ -8205,3 +8205,7 @@ blockquote {
 .social:hover {
   color: #3898ec;
 }
+
+.home-features-wrapper .dark-section-text-wrapper {
+  margin-bottom: 0em;
+}
