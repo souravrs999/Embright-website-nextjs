@@ -208,6 +208,13 @@ export default function Home() {
 
       <div className="home-features-section" id="home-section">
         <div className="home-features-wrapper">
+        <div className="dark-section-text-wrapper">
+        <h6>Products</h6>
+          {/* <h2 className="dark-section-title-text">
+          The guys at work behind the sceces
+        </h2> */}
+          <div className="div-line"></div>
+          </div>
           <div id="Features" className="w-layout-grid home-features-grid">
             <a
               href="https://www.myauticare.com/"
@@ -215,6 +222,11 @@ export default function Home() {
               rel="noreferrer"
             >
               <div className="home-features-block">
+              <h6>Digital Healthcare</h6>
+            <h2>
+              Virtual<br />
+              <span className="text-color">Teletherapy</span>
+            </h2>
                 <div className="home-features-icon-wrapper">
                   <div className="home-features-icon">
                     <Image
@@ -238,10 +250,16 @@ export default function Home() {
                   XR-AI based Assistive Technology Learning platform for Autism
                   Spectrum Disorder and Special Education.
                 </p>
+                
               </div>
             </a>
             <a href="https://mindcarexr.com/" target="_blank" rel="noreferrer">
               <div className="home-features-block">
+              <h6>Mind and Wellness</h6>
+            <h2>
+              Virtual<br />
+              <span className="text-color">Teletherapy</span>
+            </h2>
                 <div className="home-features-icon-wrapper">
                   <div className="home-features-icon">
                     <Image
@@ -274,6 +292,11 @@ export default function Home() {
               rel="noreferrer"
             >
               <div className="home-features-block">
+              <h6>Education</h6>
+            <h2>
+              EduTech &
+              <span className="text-color"> Skill Development</span>
+            </h2>
                 <div className="home-features-icon-wrapper">
                   <div className="home-features-icon">
                     <Image
@@ -303,6 +326,11 @@ export default function Home() {
               rel="noreferrer"
             >
               <div className="home-features-block">
+              <h6>Marketing</h6>
+            <h2>
+              Virtual<br />
+              <span className="text-color">Solutions</span>
+            </h2>
                 <div className="home-features-icon-wrapper">
                   <div className="home-features-icon">
                     <Image
