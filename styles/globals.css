@@ -8214,3 +8214,6 @@ blockquote {
 .home-features-wrapper .dark-section-text-wrapper {
   margin-bottom: 0em;
 }
+.home-features-block p {
+  padding-bottom: 5em;
+}
