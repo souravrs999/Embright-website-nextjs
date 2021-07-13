@@ -223,10 +223,10 @@ export default function Home() {
             >
               <div className="home-features-block">
               <h6>Digital Healthcare</h6>
-            <h2>
+            <h3>
               Virtual<br />
               <span className="text-color">Teletherapy</span>
-            </h2>
+            </h3>
                 <div className="home-features-icon-wrapper">
                   <div className="home-features-icon">
                     <Image
@@ -256,10 +256,10 @@ export default function Home() {
             <a href="https://mindcarexr.com/" target="_blank" rel="noreferrer">
               <div className="home-features-block">
               <h6>Mind and Wellness</h6>
-            <h2>
+            <h3>
               Virtual<br />
               <span className="text-color">Teletherapy</span>
-            </h2>
+            </h3>
                 <div className="home-features-icon-wrapper">
                   <div className="home-features-icon">
                     <Image
@@ -293,10 +293,10 @@ export default function Home() {
             >
               <div className="home-features-block">
               <h6>Education</h6>
-            <h2>
+            <h3>
               EduTech &
               <span className="text-color"> Skill Development</span>
-            </h2>
+            </h3>
                 <div className="home-features-icon-wrapper">
                   <div className="home-features-icon">
                     <Image
@@ -327,10 +327,10 @@ export default function Home() {
             >
               <div className="home-features-block">
               <h6>Marketing</h6>
-            <h2>
+            <h3>
               Virtual<br />
               <span className="text-color">Solutions</span>
-            </h2>
+            </h3>
                 <div className="home-features-icon-wrapper">
                   <div className="home-features-icon">
                     <Image
@@ -513,7 +513,7 @@ export default function Home() {
                   alt=""
                   className="quote-image"
                 />
-                <blockquote>{testimonialItems[quote].quote}</blockquote>
+                {/* <blockquote>{testimonialItems[quote].quote}</blockquote> */}
                 <h6>{testimonialItems[quote].desg}</h6>
                 <h3 className="testimonial-title-text">
                   {testimonialItems[quote].name}
