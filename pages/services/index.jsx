@@ -182,15 +182,23 @@ export default function Services() {
         <div className="w-layout-grid contact-grid">
           <div className="map-wrapper">
             <div className="map w-widget w-widget-map">
-              <div className="contact-form-div">
-                <h3 className="contact-form-title-text">App Development</h3>
+              <div className="contact-form-div" style={{ border: "0px transparent" }}>
+                <img
+                  src="/images/services-section/app-dev.png"
+                  width="100"
+                  height="100"
+                  alt=""
+                  className="item-image"
+                  style={{ paddingBottom: "10px" }}
+                />
+                <h3 className="contact-form-title-text">Android App Development</h3>
                 <div className="div-line"></div>
                 <div className="contact-form-block w-form">{/* content */}</div>
                 <div
                   className="contact-info-container"
                   style={{ zIndex: "1 !important" }}
                 >
-                  <p style={{ textAlign: "justify" }}>
+                  <p style={{ textAlign: "center" }}>
                     <strong>
                       • Web app Development
                       <br />
@@ -213,12 +221,23 @@ export default function Services() {
               </div>
             </div>
           </div>
-          <div className="contact-form-div">
+          <div
+            className="contact-form-div"
+            style={{ border: "0px transparent" }}
+          >
+            <img
+              src="/images/services-section/des-dev.png"
+              width="100"
+              height="100"
+              alt=""
+              className="item-image"
+              style={{ paddingBottom: "10px" }}
+            />
             <h3 className="contact-form-title-text">Design & Development</h3>
             <div className="div-line"></div>
             <div className="contact-form-block w-form">{/* content */}</div>
             <div className="contact-info-container">
-              <p style={{ textAlign: "justify" }}>
+              <p style={{ textAlign: "center" }}>
                 <strong>
                   • 3D Modelling
                   <br />
