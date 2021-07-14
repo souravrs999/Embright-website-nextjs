@@ -178,16 +178,16 @@ export default function Services() {
         </div>
       </div>
 
-      <div class="aux-block top-margin-negative">
-        <div class="w-layout-grid contact-grid">
-          <div class="map-wrapper">
-            <div class="map w-widget w-widget-map">
-              <div class="contact-form-div">
-                <h3 class="contact-form-title-text">App Development</h3>
-                <div class="div-line"></div>
-                <div class="contact-form-block w-form">{/* content */}</div>
+      <div className="aux-block top-margin-negative">
+        <div className="w-layout-grid contact-grid">
+          <div className="map-wrapper">
+            <div className="map w-widget w-widget-map">
+              <div className="contact-form-div">
+                <h3 className="contact-form-title-text">App Development</h3>
+                <div className="div-line"></div>
+                <div className="contact-form-block w-form">{/* content */}</div>
                 <div
-                  class="contact-info-container"
+                  className="contact-info-container"
                   style={{ zIndex: "1 !important" }}
                 >
                   <p style={{ textAlign: "justify" }}>
@@ -213,11 +213,11 @@ export default function Services() {
               </div>
             </div>
           </div>
-          <div class="contact-form-div">
-            <h3 class="contact-form-title-text">Design & Development</h3>
-            <div class="div-line"></div>
-            <div class="contact-form-block w-form">{/* content */}</div>
-            <div class="contact-info-container">
+          <div className="contact-form-div">
+            <h3 className="contact-form-title-text">Design & Development</h3>
+            <div className="div-line"></div>
+            <div className="contact-form-block w-form">{/* content */}</div>
+            <div className="contact-info-container">
               <p style={{ textAlign: "justify" }}>
                 <strong>
                   • 3D Modelling
