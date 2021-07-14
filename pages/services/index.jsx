@@ -205,7 +205,7 @@ export default function Services() {
                       • Android App Development
                       <br />
                       <br />
-                      • IOS Development
+                      • iOS App Development
                       <br />
                       <br />
                       • Hybrid Application
