@@ -181,8 +181,7 @@ export default function Services() {
       <div className="aux-block top-margin-negative">
         <div className="w-layout-grid contact-grid">
           <div className="map-wrapper">
-            <div className="map w-widget w-widget-map">
-              <div className="contact-form-div" style={{ border: "0px transparent" }}>
+              <div className="contact-form-div">
                 <img
                   src="/images/services-section/app-dev.png"
                   width="100"
@@ -191,7 +190,7 @@ export default function Services() {
                   className="item-image"
                   style={{ paddingBottom: "10px" }}
                 />
-                <h3 className="contact-form-title-text">Android App Development</h3>
+                <h3 className="contact-form-title-text">App Development</h3>
                 <div className="div-line"></div>
                 <div className="contact-form-block w-form">{/* content */}</div>
                 <div
@@ -203,7 +202,7 @@ export default function Services() {
                       • Web app Development
                       <br />
                       <br />
-                      • Android Development
+                      • Android App Development
                       <br />
                       <br />
                       • IOS Development
@@ -220,10 +219,8 @@ export default function Services() {
                 </div>
               </div>
             </div>
-          </div>
           <div
             className="contact-form-div"
-            style={{ border: "0px transparent" }}
           >
             <img
               src="/images/services-section/des-dev.png"
