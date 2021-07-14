@@ -54,8 +54,8 @@ export const navLinks = {
       },
       xrServices: {
         id: "3ad4945c-daec-11eb-8d19-0242ac130003",
-        name: "XR Services ›",
-        link: "/services/xr-services",
+        name: "Services ›",
+        link: "/services",
       },
     },
   },

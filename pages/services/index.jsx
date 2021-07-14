@@ -1,11 +1,12 @@
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import { navLinks } from "../../../utils/nav-links";
-import { serviceItems } from "../../../utils/service-items";
+import { navLinks } from "../../utils/nav-links";
+import { serviceItems } from "../../utils/service-items";
 import Link from "next/link";
 import Image from "next/image";
 import Head from "next/head";
-import { SEO } from "../../../utils/seo";
+import { SEO } from "../../utils/seo";
+import { testimonialItems } from "../../utils/testimonial-items";
 
 export default function Services() {
   const { pathname } = useRouter();
@@ -173,6 +174,70 @@ export default function Services() {
               <span className="text-color">Services</span>
             </h1>
             <div className="div-line"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="aux-block top-margin-negative">
+        <div class="w-layout-grid contact-grid">
+          <div class="map-wrapper">
+            <div class="map w-widget w-widget-map">
+              <div class="contact-form-div">
+                <h3 class="contact-form-title-text">App Development</h3>
+                <div class="div-line"></div>
+                <div class="contact-form-block w-form">{/* content */}</div>
+                <div
+                  class="contact-info-container"
+                  style={{ zIndex: "1 !important" }}
+                >
+                  <p style={{ textAlign: "justify" }}>
+                    <strong>
+                      • Web app Development
+                      <br />
+                      <br />
+                      • Android Development
+                      <br />
+                      <br />
+                      • IOS Development
+                      <br />
+                      <br />
+                      • Hybrid Application
+                      <br />
+                      <br />
+                      • Native Application
+                      <br />
+                      <br />
+                    </strong>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="contact-form-div">
+            <h3 class="contact-form-title-text">Design & Development</h3>
+            <div class="div-line"></div>
+            <div class="contact-form-block w-form">{/* content */}</div>
+            <div class="contact-info-container">
+              <p style={{ textAlign: "justify" }}>
+                <strong>
+                  • 3D Modelling
+                  <br />
+                  <br />
+                  • 3D Animation
+                  <br />
+                  <br />
+                  • Concept Design
+                  <br />
+                  <br />
+                  • UI/UX Design
+                  <br />
+                  <br />
+                  • VFX Effect
+                  <br />
+                  <br />
+                </strong>
+              </p>
+            </div>
           </div>
         </div>
       </div>
