@@ -1,11 +1,12 @@
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import { navLinks } from "../../../utils/nav-links";
-import { serviceItems } from "../../../utils/service-items";
+import { navLinks } from "../../utils/nav-links";
+import { serviceItems } from "../../utils/service-items";
 import Link from "next/link";
 import Image from "next/image";
 import Head from "next/head";
-import { SEO } from "../../../utils/seo";
+import { SEO } from "../../utils/seo";
+import { testimonialItems } from "../../utils/testimonial-items";
 
 export default function Services() {
   const { pathname } = useRouter();
@@ -173,6 +174,86 @@ export default function Services() {
               <span className="text-color">Services</span>
             </h1>
             <div className="div-line"></div>
+          </div>
+        </div>
+      </div>
+
+      <div className="aux-block top-margin-negative">
+        <div className="w-layout-grid contact-grid">
+          <div className="map-wrapper">
+              <div className="contact-form-div">
+                <img
+                  src="/images/services-section/app-dev.png"
+                  width="100"
+                  height="100"
+                  alt=""
+                  className="item-image"
+                  style={{ paddingBottom: "10px" }}
+                />
+                <h3 className="contact-form-title-text">App Development</h3>
+                <div className="div-line"></div>
+                <div className="contact-form-block w-form">{/* content */}</div>
+                <div
+                  className="contact-info-container"
+                  style={{ zIndex: "1 !important" }}
+                >
+                  <p style={{ textAlign: "center" }}>
+                    <strong>
+                      • Web app Development
+                      <br />
+                      <br />
+                      • Android App Development
+                      <br />
+                      <br />
+                      • iOS App Development
+                      <br />
+                      <br />
+                      • Hybrid Application
+                      <br />
+                      <br />
+                      • Native Application
+                      <br />
+                      <br />
+                    </strong>
+                  </p>
+                </div>
+              </div>
+            </div>
+          <div
+            className="contact-form-div"
+          >
+            <img
+              src="/images/services-section/des-dev.png"
+              width="100"
+              height="100"
+              alt=""
+              className="item-image"
+              style={{ paddingBottom: "10px" }}
+            />
+            <h3 className="contact-form-title-text">Design & Development</h3>
+            <div className="div-line"></div>
+            <div className="contact-form-block w-form">{/* content */}</div>
+            <div className="contact-info-container">
+              <p style={{ textAlign: "center" }}>
+                <strong>
+                  • 3D Modelling
+                  <br />
+                  <br />
+                  • 3D Animation
+                  <br />
+                  <br />
+                  • Concept Design
+                  <br />
+                  <br />
+                  • UI/UX Design
+                  <br />
+                  <br />
+                  • VFX Effect
+                  <br />
+                  <br />
+                </strong>
+              </p>
+            </div>
           </div>
         </div>
       </div>

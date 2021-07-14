@@ -179,35 +179,41 @@ export default function Blogs({ blogList }) {
         <div className="aux-block top-margin-negative">
           <div className="home-news-list-wrapper w-dyn-list">
             <div role="list" className="home-news-list w-dyn-items">
-              {blogList.map((item) => (
-                <div
-                  role="listitem"
-                  className="home-news-item w-dyn-item"
-                  key={item.id}
-                >
-                  <Link href={`/blogs/${String(item.id)}`}>
-                    <a className="home-news-item-link-block w-inline-block">
-                      <div className="blog-item-image-wrapper">
-                        <Image
-                          src={item.coverImage.url}
-                          layout="fill"
-                          className="blog-item-image"
-                          alt=""
-                        />
-                      </div>
-                      <div className="blog-item-text-wrapper">
-                        <h6>{dateFormatter(item.publishDate)}</h6>
-                        <h3 className="blog-item-title-text">{item.Title}</h3>
-                        <div className="horizontal-line"></div>
-                        <p className="blog-item-short-desciption-text">
-                          {`${item.Body.slice(0, 100)}...`}
-                        </p>
-                        <h6>Read More...</h6>
-                      </div>
-                    </a>
-                  </Link>
-                </div>
-              ))}
+              {blogList
+                .sort((a, b) => {
+                  return a.publishDate < b.publishDate ? 1 : -1;
+                })
+                .map((item) => (
+                  <div
+                    role="listitem"
+                    className="home-news-item w-dyn-item"
+                    key={item.id}
+                  >
+                    <Link href={`/blogs/${String(item.id)}`}>
+                      <a className="home-news-item-link-block w-inline-block">
+                        <div className="blog-item-image-wrapper">
+                          <Image
+                            src={item.coverImage.url}
+                            layout="fill"
+                            className="blog-item-image"
+                            alt=""
+                          />
+                        </div>
+                        <div className="blog-item-text-wrapper">
+                          <h6 style={{ textTransform: "capitalize" }}>
+                            {dateFormatter(item.publishDate)}
+                          </h6>
+                          <h3 className="blog-item-title-text">{item.Title}</h3>
+                          <div className="horizontal-line"></div>
+                          <p className="blog-item-short-desciption-text">
+                            {`${item.Body.slice(0, 100)}...`}
+                          </p>
+                          <h6>Read More...</h6>
+                        </div>
+                      </a>
+                    </Link>
+                  </div>
+                ))}
             </div>
           </div>
         </div>
