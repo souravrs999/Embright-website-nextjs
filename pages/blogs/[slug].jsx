@@ -211,7 +211,7 @@ export async function getStaticPaths() {
         slug: String(item.id),
       },
     })),
-    fallback: false,
+    fallback: true,
   };
 }
 
