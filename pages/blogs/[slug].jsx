@@ -201,7 +201,21 @@ export default function Blog({ blogData }) {
   );
 }
 
-export async function getServerSideProps({ params }) {
+export async function getStaticPaths() {
+  const res = await fetch(`${process.env.STRAPI_URL}/embright-blogs`);
+  const blogList = await res.json();
+
+  return {
+    paths: blogList.map((item) => ({
+      params: {
+        slug: String(item.id),
+      },
+    })),
+    fallback: false,
+  };
+}
+
+export async function getStaticProps({ params }) {
   const data = await fetch(
     `${process.env.STRAPI_URL}/embright-blogs?id=${params.slug}`
   );
@@ -211,5 +225,6 @@ export async function getServerSideProps({ params }) {
     props: {
       blogData: blogData[0],
     },
+    revalidate: 60,
   };
 }
